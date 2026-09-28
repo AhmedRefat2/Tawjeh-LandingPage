@@ -193,6 +193,18 @@ header.solid nav{background:rgba(7,13,27,.85);box-shadow:0 14px 34px -14px rgba(
 .offer-price small{font-size:13px;font-weight:800;color:var(--gold-2)}
 .offer-price .free{font-size:28px;font-weight:900;color:#3DDC97}
 .offer-sub{font-size:12.5px;font-weight:700;color:var(--gold-2);background:rgba(220,158,31,.12);border:1px solid rgba(243,196,99,.22);border-radius:10px;padding:8px 12px;margin:-4px 0 16px}
+
+.price-usd{display:flex;align-items:baseline;justify-content:center;gap:8px;direction:ltr;margin:-2px 0 14px;font-weight:800;color:var(--gold-2)}
+.price-usd b{font-size:34px;font-weight:900;color:var(--ink);letter-spacing:-.5px}
+.price-usd span{font-size:14px}
+.offer-usd{display:flex;align-items:baseline;justify-content:flex-end;gap:10px;direction:ltr;padding-top:4px}
+.offer-usd s{font-size:13px;font-weight:700;color:#7C879E}
+.offer-usd b{font-size:20px;font-weight:900;color:var(--ink)}
+.offer-usd small{font-size:12px;font-weight:800;color:var(--gold-2)}
+.offer-sub .sub-usd{margin-top:4px;padding-top:4px;border-top:1px dashed rgba(243,196,99,.22)}
+.offer-sub .ltr{direction:ltr;unicode-bidi:isolate;display:inline-block}
+
+
 /* FAQ */
 .faq-item{border-bottom:1px solid var(--border)}
 .faq-q{width:100%;text-align:start;background:none;border:none;padding:22px 0;font-size:16.5px;font-weight:700;color:var(--ink);cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:inherit}
@@ -559,12 +571,13 @@ footer{padding:60px 0 30px;border-top:1px solid var(--border)}
     <div class="price-main reveal">
       <span class="price-pill">رسوم الاشتراك في الـRound</span>
       <div class="price-amount"><b>1500</b><span>EGP</span></div>
+      <div class="price-usd"><b>$30</b><span>USD</span></div>
       <p class="price-note">دفعة واحدة للـRound كامل — الهدف ضمان الجدية وتغطية تكاليف التشغيل.</p>
       <a href="https://forms.gle/2Ui9fqWfUR8MWw2a8" target="_blank" rel="noopener" class="btn btn-primary">Apply Now</a>
     </div>
     <div class="offer-grid">
-      <div class="offer-card reveal"><span class="offer-badge">50% OFF</span><h3>Bring a Friend</h3><p>لو عضو حالي في Tawjeh جاب شخص من خارج Tawjeh واشترك في الـRound، الاتنين يدفعوا 50% من قيمة الاشتراك.</p><div class="offer-price"><s>1500</s><b>750</b><small>EGP</small></div></div>
-      <div class="offer-card reveal"><span class="offer-badge">50% OFF</span><h3>Bring 3 Friends</h3><p>لو جبت 3 أشخاص جدد واشتركوا ودفعوا، تحصل على خصم 50% على اشتراكك، وهما يحصلوا على خصم 20%.</p><div class="offer-sub">الأصدقاء: 1500 ← 1200 EGP (خصم 20%)</div><div class="offer-price"><s>1500</s><b>750</b><small>EGP</small></div></div>
+      <div class="offer-card reveal"><span class="offer-badge">50% OFF</span><h3>Bring a Friend</h3><p>لو عضو حالي في Tawjeh جاب شخص من خارج Tawjeh واشترك في الـRound، الاتنين يدفعوا 50% من قيمة الاشتراك.</p><div class="offer-price"><s>1500</s><b>750</b><small>EGP</small></div><div class="offer-usd"><s>$30</s><b>$15</b><small>USD</small></div></div>
+      <div class="offer-card reveal"><span class="offer-badge">50% OFF</span><h3>Bring 3 Friends</h3><p>لو جبت 3 أشخاص جدد واشتركوا ودفعوا، تحصل على خصم 50% على اشتراكك، وهما يحصلوا على خصم 20%.</p><div class="offer-sub">الأصدقاء: 1500 ← 1200 EGP (خصم 20%)<div class="sub-usd"><span class="ltr">$30</span> ← <span class="ltr">$25</span> <span class="ltr">USD</span></div></div><div class="offer-price"><s>1500</s><b>750</b><small>EGP</small></div><div class="offer-usd"><s>$30</s><b>$15</b><small>USD</small></div></div>
       <div class="offer-card reveal"><span class="offer-badge">FREE</span><h3>Gaza Support</h3><p>المشاركون من غزة معفيين من رسوم الاشتراك. يتم احتساب الـReferral بعد إتمام التسجيل والدفع.</p><div class="offer-price"><s>1500</s><span class="free">مجانًا</span></div></div>
     </div>
   </div>
