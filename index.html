@@ -295,6 +295,26 @@ footer{padding:60px 0 30px;border-top:1px solid var(--border)}
 
 
 
+
+/* Projects: single horizontal scroll row (reuses existing card design) */
+.p-grid.p-row{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:14px;-webkit-overflow-scrolling:touch}
+.p-grid.p-row .p-card{flex:0 0 340px;max-width:85%;scroll-snap-align:start}
+
+/* Career Ready (Tawjeh x Tadween) */
+.cr-lockup{display:inline-flex;align-items:center;gap:18px;padding:14px 24px;margin:6px 0 22px;direction:ltr}
+.cr-brand{display:flex;align-items:center;gap:12px;font-size:18px;font-weight:700;color:var(--ink)}
+.cr-brand img{width:44px;height:44px;border-radius:12px;display:block}
+.cr-x{color:var(--gold-2);font-size:22px;font-weight:700}
+.cr-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+.cr-grid .f-card{grid-column:span 3;padding:22px}
+.cr-grid .f-card:nth-child(n+5){grid-column:span 4}
+.cr-grid .f-card p{font-size:14px}
+.cr-ic{width:38px;height:38px;border-radius:10px;background:rgba(220,158,31,.15);color:var(--gold-2);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.cr-ic svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:900px){
+  .cr-grid{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:14px;-webkit-overflow-scrolling:touch}
+  .cr-grid .f-card,.cr-grid .f-card:nth-child(n+5){flex:0 0 280px;max-width:80%;scroll-snap-align:start}
+}
 </style>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23070D1B'/><g transform='translate(9 10) scale(.98)'><polygon points='1,17 55,17 39.5,32.6 39.5,82 26,82 26,32.6 1,32.6' fill='%23fff'/><polygon points='47,0.9 82.75,0.9 82.75,34.9 73.1,34.9 73.1,17.1 52.9,37.1 52.9,81.9 42.25,81.9 42.25,34.6 66.25,10.4 47,10.4' fill='%23DC9E1F'/></g></svg>">
 </head>
@@ -309,10 +329,11 @@ footer{padding:60px 0 30px;border-top:1px solid var(--border)}
     <a href="#top" class="brand" aria-label="Tawjeh"><svg class="brand-mark" viewBox="0 0 84 83" role="img" aria-label="Tawjeh" ><polygon points="1,17 55,17 39.5,32.6 39.5,82 26,82 26,32.6 1,32.6" fill="#fff" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/><polygon points="47,0.9 82.75,0.9 82.75,34.9 73.1,34.9 73.1,17.1 52.9,37.1 52.9,81.9 42.25,81.9 42.25,34.6 66.25,10.4 47,10.4" fill="#DC9E1F" stroke="#DC9E1F" stroke-width="1.5" stroke-linejoin="round"/></svg><span class="brand-word">Tawjeh</span></a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
-      <li><a href="#levels">Levels</a></li>
       <li><a href="#mentoring">Mentoring</a></li>
-      <li><a href="#projects">Projects</a></li>
+      <li><a href="#levels">Levels</a></li>
+      <li><a href="#pricing">Pricing</a></li>
       <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#projects">Projects</a></li>
       <li><a href="#faq">FAQ</a></li>
     </ul>
     <div class="nav-actions">
@@ -321,9 +342,9 @@ footer{padding:60px 0 30px;border-top:1px solid var(--border)}
     </div>
   </nav>
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#about">About</a><a href="#levels">Levels</a><a href="#mentoring">Mentoring</a>
-    <a href="#platform">Platform</a><a href="#projects">Projects</a><a href="#reviews">Reviews</a>
-    <a href="#faq">FAQ</a><a href="https://forms.gle/2Ui9fqWfUR8MWw2a8" target="_blank" rel="noopener" class="btn btn-primary">Apply for Round 2</a>
+    <a href="#about">About</a><a href="#mentoring">Mentoring</a><a href="#levels">Levels</a>
+    <a href="#pricing">Pricing</a><a href="#reviews">Reviews</a><a href="#projects">Projects</a>
+    <a href="#platform">Platform</a><a href="#faq">FAQ</a><a href="https://forms.gle/2Ui9fqWfUR8MWw2a8" target="_blank" rel="noopener" class="btn btn-primary">Apply for Round 2</a>
   </div>
 </header>
 <div id="top"></div>
@@ -369,7 +390,23 @@ footer{padding:60px 0 30px;border-top:1px solid var(--border)}
     </div>
   </div>
 </section>
-
+<section id="apply">
+  <div class="wrap">
+    <div class="round-banner glass reveal">
+      <div class="eyebrow" style="justify-content:center">Round 2</div>
+      <div class="round-dates">Starts: 20 October — Ends: 20 January</div>
+      <p style="margin-top:10px">Duration: 3 Months. Each Round is designed to complete one full Level.</p>
+      <div class="countdown">
+        <div class="cd-box"><div class="cd-num" id="cd-d">--</div><div class="cd-label">Days</div></div>
+        <div class="cd-box"><div class="cd-num" id="cd-h">--</div><div class="cd-label">Hours</div></div>
+        <div class="cd-box"><div class="cd-num" id="cd-m">--</div><div class="cd-label">Min</div></div>
+        <div class="cd-box"><div class="cd-num" id="cd-s">--</div><div class="cd-label">Sec</div></div>
+      </div>
+    
+      <div style="margin-top:28px"><a href="https://forms.gle/2Ui9fqWfUR8MWw2a8" target="_blank" rel="noopener" class="btn btn-primary">Apply for Round 2</a></div>
+    </div>
+  </div>
+</section>
 <section id="about">
   <div class="wrap">
     <div class="section-head reveal">
@@ -380,7 +417,6 @@ footer{padding:60px 0 30px;border-top:1px solid var(--border)}
     </div>
   </div>
 </section>
-
 <section id="problems">
   <div class="wrap">
     <div class="section-head reveal"><div class="eyebrow">Problems</div><h2>المشاكل اللي Tawjeh بتساعدك تتغلب عليها</h2></div>
@@ -395,7 +431,6 @@ footer{padding:60px 0 30px;border-top:1px solid var(--border)}
     </div>
   </div>
 </section>
-
 <section>
   <div class="wrap">
     <div class="stats-grid reveal">
@@ -406,7 +441,6 @@ footer{padding:60px 0 30px;border-top:1px solid var(--border)}
     </div>
   </div>
 </section>
-
 <section id="why">
   <div class="wrap">
     <div class="section-head reveal"><div class="eyebrow">Why Tawjeh</div><h2>ليه Tawjeh؟</h2></div>
@@ -423,66 +457,6 @@ footer{padding:60px 0 30px;border-top:1px solid var(--border)}
     </div>
   </div>
 </section>
-
-<section id="journey">
-  <div class="wrap">
-    <div class="section-head reveal"><div class="eyebrow">Your Journey</div><h2>رحلة Tawjeh</h2></div>
-    <div class="timeline-h reveal" id="timelineH">
-      <div class="line-fill" id="lineFill"></div>
-      <div class="tl-node"><div class="tl-circle">1</div><h3>نحدد مستواك</h3></div>
-      <div class="tl-node"><div class="tl-circle">2</div><h3>تبدأ الـRound</h3></div>
-      <div class="tl-node"><div class="tl-circle">3</div><h3>تمشي على الـLearning Path المناسب لمستواك</h3></div>
-      <div class="tl-node"><div class="tl-circle">4</div><h3>تتعلم وتطبق خلال الـSprints</h3></div>
-      <div class="tl-node"><div class="tl-circle">5</div><h3>تجمع Points مع تقدمك وإنجازاتك</h3></div>
-      <div class="tl-node"><div class="tl-circle">6</div><h3>تخلص الـLevel</h3></div>
-      <div class="tl-node"><div class="tl-circle">7</div><h3>تنتقل للـLevel اللي بعده</h3></div>
-    </div>
-  </div>
-</section>
-
-<section id="system">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div class="eyebrow">Learning System</div><h2>نظام التعلم</h2>
-      <p>كل Level متقسم إلى Sprints. كل Sprint بيكون فيه:</p>
-      <div class="chips-row"><span class="chip gold">Topics</span><span class="chip gold">Suitable Resources</span><span class="chip gold">Specific Features to implement inside the Project</span></div>
-      <p>بتدرس الـTopics المطلوبة وبعدها بتطبقها مباشرة على الـFeatures. لو قابلتك مشكلة أثناء التطبيق تقدر ترجع للـMentor للحصول على Guidance.</p>
-      <p style="margin-top:12px">في نهاية كل Sprint بيتم مراجعة شغلك وعملك Code Review والحصول على Detailed Feedback. خلال الـSprint بتجمع Points مقابل الـProgress والمهام والإنجازات، والـPoints بتظهر في Progress Tracking وRanking. وبالتدريج بتبني الـProject Feature by Feature لحد ما يكتمل.</p>
-    </div>
-    <div class="sys-grid">
-      <div class="sys-card glass reveal"><h3>Learn</h3><p>Study the required Topics from selected Resources.</p></div>
-      <div class="sys-card glass reveal"><h3>Practice</h3><p>Apply what you learned through specific Features.</p></div>
-      <div class="sys-card glass reveal"><h3>Review</h3><p>Code Review + Detailed Feedback.</p></div>
-      <div class="sys-card glass reveal"><h3>Build</h3><p>Continue building the Project Sprint by Sprint.</p></div>
-      <div class="sys-card glass reveal"><h3>Track</h3><p>Track your Progress, collect Points, see your Ranking and achievements.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="levels">
-  <div class="wrap">
-    <div class="section-head reveal"><div class="eyebrow">Levels</div><h2>Levels</h2></div>
-    <div class="levels">
-      <div class="level-card glass reveal"><div class="lv">00</div><h3>Fundamentals</h3><div class="chips-row" style="margin:0 0 12px"><span class="chip">C#</span><span class="chip">OOP</span><span class="chip">Databases</span></div><p>Practical exercises and tasks to build a strong foundation.</p></div>
-      <div class="level-card glass reveal"><div class="lv">01</div><h3>.NET Foundations</h3><p>في المستوى ده هتكون نفذت مجموعة من الـProjects بإيدك، وطبقت أساسيات الـ.NET Backend والـAdvanced C# والـDatabases بشكل عملي، وبنيت خبرة حقيقية في التعامل مع الـProjects.</p></div>
-      <div class="level-card glass reveal"><div class="lv">02</div><h3>Real-World Projects</h3><p>هتشتغل على 2 Large Scale Projects وتطبق مفاهيم الـBackend Development والـArchitecture بشكل أقرب لبيئة الـReal-World Projects.</p></div>
-      <div class="level-card glass reveal"><div class="lv">03</div><h3>Open Source & Advanced GitHub</h3><p>هتكتسب تجربة فعلية في الـOpen Source وتطور مهاراتك في Git وGitHub والـCollaboration وتشارك في Real Projects.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="outcomes-level">
-  <div class="wrap">
-    <div class="section-head reveal"><div class="eyebrow">Outcomes</div><h2>هتطلع بإيه من كل Level؟</h2></div>
-    <div class="levels">
-      <div class="level-card glass reveal"><div class="lv">00</div><p>تفهم وتطبق أساسيات Programming وC# وOOP وDatabases وتبني Foundation قوية تجهزك لمسار الـ.NET.</p></div>
-      <div class="level-card glass reveal"><div class="lv">01</div><p>تنفذ مجموعة Projects بإيدك وتطبق .NET Backend Fundamentals وAdvanced C# وDatabases بشكل عملي وتكتسب خبرة حقيقية في التعامل مع الـProjects.</p></div>
-      <div class="level-card glass reveal"><div class="lv">02</div><p>تنفذ 2 Large Scale Projects وتطبق Backend Development وArchitecture بشكل أقرب لطبيعة الـReal-World Projects.</p></div>
-      <div class="level-card glass reveal"><div class="lv">03</div><p>تكتسب تجربة فعلية في Open Source وتطور Git وGitHub وCollaboration وتشارك في Real Projects.</p></div>
-    </div>
-  </div>
-</section>
-
 <section id="mentoring">
   <div class="wrap">
     <div class="mentor-grid">
@@ -501,7 +475,48 @@ footer{padding:60px 0 30px;border-top:1px solid var(--border)}
     </div>
   </div>
 </section>
-
+<section id="journey">
+  <div class="wrap">
+    <div class="section-head reveal"><div class="eyebrow">Your Journey</div><h2>رحلة Tawjeh</h2></div>
+    <div class="timeline-h reveal" id="timelineH">
+      <div class="line-fill" id="lineFill"></div>
+      <div class="tl-node"><div class="tl-circle">1</div><h3>نحدد مستواك</h3></div>
+      <div class="tl-node"><div class="tl-circle">2</div><h3>تبدأ الـRound</h3></div>
+      <div class="tl-node"><div class="tl-circle">3</div><h3>تمشي على الـLearning Path المناسب لمستواك</h3></div>
+      <div class="tl-node"><div class="tl-circle">4</div><h3>تتعلم وتطبق خلال الـSprints</h3></div>
+      <div class="tl-node"><div class="tl-circle">5</div><h3>تجمع Points مع تقدمك وإنجازاتك</h3></div>
+      <div class="tl-node"><div class="tl-circle">6</div><h3>تخلص الـLevel</h3></div>
+      <div class="tl-node"><div class="tl-circle">7</div><h3>تنتقل للـLevel اللي بعده</h3></div>
+    </div>
+  </div>
+</section>
+<section id="system">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Learning System</div><h2>نظام التعلم</h2>
+      <p>كل Level متقسم إلى Sprints. كل Sprint بيكون فيه:</p>
+      <div class="chips-row"><span class="chip gold">Topics</span><span class="chip gold">Suitable Resources</span><span class="chip gold">Specific Features to implement inside the Project</span></div>
+    </div>
+    <div class="sys-grid">
+      <div class="sys-card glass reveal"><h3>Learn</h3><p>Study the required Topics from selected Resources.</p></div>
+      <div class="sys-card glass reveal"><h3>Practice</h3><p>Apply what you learned through specific Features.</p></div>
+      <div class="sys-card glass reveal"><h3>Review</h3><p>Code Review + Detailed Feedback.</p></div>
+      <div class="sys-card glass reveal"><h3>Build</h3><p>Continue building the Project Sprint by Sprint.</p></div>
+      <div class="sys-card glass reveal"><h3>Track</h3><p>Track your Progress, collect Points, see your Ranking and achievements.</p></div>
+    </div>
+  </div>
+</section>
+<section id="levels">
+  <div class="wrap">
+    <div class="section-head reveal"><div class="eyebrow">Levels</div><h2>Levels</h2></div>
+    <div class="levels">
+      <div class="level-card glass reveal"><div class="lv">00</div><h3>Fundamentals</h3><div class="chips-row" style="margin:0 0 12px"><span class="chip">C#</span><span class="chip">OOP</span><span class="chip">Databases</span></div><p>Practical exercises and tasks to build a strong foundation.</p></div>
+      <div class="level-card glass reveal"><div class="lv">01</div><h3>.NET Foundations</h3><p>في المستوى ده هتكون نفذت مجموعة من الـProjects بإيدك، وطبقت أساسيات الـ.NET Backend والـAdvanced C# والـDatabases بشكل عملي، وبنيت خبرة حقيقية في التعامل مع الـProjects.</p></div>
+      <div class="level-card glass reveal"><div class="lv">02</div><h3>Real-World Projects</h3><p>هتشتغل على 2 Large Scale Projects وتطبق مفاهيم الـBackend Development والـArchitecture بشكل أقرب لبيئة الـReal-World Projects.</p></div>
+      <div class="level-card glass reveal"><div class="lv">03</div><h3>Open Source & Advanced GitHub</h3><p>هتكتسب تجربة فعلية في الـOpen Source وتطور مهاراتك في Git وGitHub والـCollaboration وتشارك في Real Projects.</p></div>
+    </div>
+  </div>
+</section>
 <section id="practice">
   <div class="wrap">
     <div class="section-head reveal"><div class="eyebrow">Practical Experience</div><h2>Practical Experience</h2><p>في Tawjeh التطبيق جزء أساسي من الرحلة. هتشتغل على مجموعة من الـProjects وتطبق اللي بتتعلمه بشكل عملي.</p></div>
@@ -517,34 +532,54 @@ footer{padding:60px 0 30px;border-top:1px solid var(--border)}
     </div>
   </div>
 </section>
-
-<section id="projects">
+<section id="career">
   <div class="wrap">
-    <div class="section-head reveal"><div class="eyebrow">Projects</div><h2>Student Projects</h2></div>
-    <div class="p-grid" id="projectsGrid"></div>
-  </div>
-</section>
-
-<section id="reviews">
-  <div class="wrap">
-    <div class="section-head reveal"><div class="eyebrow">Reviews</div><h2>Student Reviews</h2></div>
-    <div class="t-scroll reveal" id="testGrid"></div>
-  </div>
-</section>
-
-<section id="apply">
-  <div class="wrap">
-    <div class="round-banner glass reveal">
-      <div class="eyebrow" style="justify-content:center">Round 2</div>
-      <div class="round-dates">Starts: 20 October — Ends: 20 January</div>
-      <p style="margin-top:10px">Duration: 3 Months. Each Round is designed to complete one full Level.</p>
-      <div class="countdown">
-        <div class="cd-box"><div class="cd-num" id="cd-d">--</div><div class="cd-label">Days</div></div>
-        <div class="cd-box"><div class="cd-num" id="cd-h">--</div><div class="cd-label">Hours</div></div>
-        <div class="cd-box"><div class="cd-num" id="cd-m">--</div><div class="cd-label">Min</div></div>
-        <div class="cd-box"><div class="cd-num" id="cd-s">--</div><div class="cd-label">Sec</div></div>
+    <div class="section-head reveal" style="margin-bottom:36px">
+      <div class="eyebrow">Partnership</div>
+      <h2>Career Ready</h2>
+      <div class="cr-lockup glass" dir="ltr">
+        <div class="cr-brand"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAACgCAIAAAAErfB6AABKHklEQVR42o19eazu61XWet7v+/Y+p/fe3nt7bytoIE6QGAiaGBMThRAZi1VoKGAHFCk0yKSiVCnIZAtlaiRYWgYZRCFOcYhDomhEI9U6R01tqaCAU2kvZ9777P197+Mfv3et9az399uNt2l77jn7fN9veN/1rvWs53kWDs9+nI1/ANAIGk3+AUBy+YWZLb9e/wMYGT8Mw/LbhBnNQFB/0mj0vzN9l3H8MMzI5ZOWjzT/UDMDl2+r10pi+QIzkoDp7fgf1TtYrhhmfvHjRmy5YAIgbdzF8h1+IViulPAfo3/euHEDuFyV/+a4reV/6wP1L+L4/XFDy0MiMB4g/BI4PsNIWFzG8ivAn7A1AMtDXJ4j49X41/h1L7+kPpl4YdO7juuAP498u/Eh/kznv0gQy7shACNIjOcdD87MsLwseefLpyGewPK99MuBrw/k34mPIMyM43nFz3BcOYyw5R0Ry9+CLc9qeaTIryT9Qpdfk8tqhH81x8X6e0I8l7wRLu/COJ6cr574a4SvwOXqfR8td5lr0Kwx3qrfC2OLAOUF1K07beW8ADCWwlgbyxYwGsw/E7aszbqW4vkzI8eyiTFeH6Hfy/iE5cP96S7fY8smNsQFjt3M3Mx+U7rWxjYHfLvFaiyPAvAlB1nBslqXb1k+F8S4kY3Yh1yExPKvcbGIDZ7/g/HnwNi1JRzQHwwA2j5+OGNCvK8l2sIj4g3/eBgxjFWhT8AicEfYHHHUPIxIlJJvoWx6i+WyrEQwnvZYVvRbH3+yxDUDPOj5bZfAa5abwF9pvsYRuM3vy/zGwDhMDFOMlcXna07WBOdA51dPMGIzy+GR62p8Fcp6Y0bM5ar8QOFYMW08gbF6WCKcP7IP83bj4iFXFiEdjMscl8JxMNHPWSAWOXylopwSI6LDAPhjxnySMkPMcsGMH/SPQuzgsWPHd/uR4auAHgQhdwcQ452N1TTe7wjuALafS+xmP2fGT2bs8f9iROayqpdTKpa8BD/L+FGCvsfFcfo3eAZB80UdkdmP93ruYo5EvtDHO/BF5xnb+MDxiXGqxJlE0pOoaXH5b8tzH9FHM7aMU7lL/HtGwsflIAIIjP3s/4lPGcuQmZFYPFBKMMe4BoywRc97NrcBYjdPO5i5fJfFCAKMNCFzhmUrxEkNi+NOclvfKpYJ08gDG/WxwEgwQjY1yYqMj35omEb1kRmMjJFx4NDmsKh5Re4efW1kbJ4lpoxMcIljHG8q80mgLH1PNnJlwuRH4lSLUwMjTYkVBy4HSKbO+T8cZyTH650C7vyvyOugbA8/vnIBLveWX+d7bhyhmS3aOKb8TlBOqpGMwvP8ZohcygP8cnBpARQRMX7NEoU0OOu56nGSGZJtpKIlIR8r2fOvJZT55fqewVgInjVkRm2513zDeOyIVMUvlmOBwjhu3RPCSJuwfIAkZ3MEzhVreQ7WVZ+r38/vsdeWl0o/pCP7XeI947f9I30/QTL0yCuh+8Ufi1ccNJq1Jb3IIOkJx0as8eWxfd4g3/AIF/r+AT9JbCkuDLXOhtfHGH8/ir04O/z+mFWM5pp+nESxtDwdi4A21g88Fkt8GqlwVLy+KLMgZykfqDWY+cVtZipRgEVOHK+zBmPkOmRNMSNSI+N2nl7jzeYCzbwTsFbWJRkZ13hMXkgbNcPORa2piCwTkvISM/zqxo+4wRGg6fuWHMvIM4jYwx49lziAJVh7qTIyZ68g45Qalw8/HuC1Pz13YKajnkCMI8FuQHWQmQtWRUXFf0xSJSkjc797zql7N5KQSCuzxPckPkKEaewfj8rjcFvXPEsK4YvIyyUv7uOGGJWUnnVRfsOyJh1Jum8WT6jHqx1re8loY9tRcpPxcMYSztKGIJfSuCyZkRH4jtcnzuW4G/stCqrllbPAJvQMTXIc2a9+yK+C3QgTUQ74pvQKIDAXTe/HgoKX+14wwUtH+jUJXjN2LfPepKbwaL5PuJBWITNJXIA4mxInWZesgf4ws2APIoEPJWZXH0+cZ1nCRirhSwUMcM4YQGBkjct1w0B/bbHMM71nJv1R09LGoxtXj4jWlDrQj5J5l06PwwJI9GOSglA5QCPIK2NN+moaiULsXWbVoWDjkoTS945XcctPjBfVdNl6dialFiItd4yEZtjGomOr5v2yoieKf1g5tMaZES8MS1ZGk8NgYNpEjWNa5480UO+IiMoqoorvQmrW7fcKSUMt63SOqI182bmpuX34BhJKzaYD0WF9TtC6mbqDxgkGq4HdMWdGAA+AjZ4ttwgTI1ouC5kmlZ7l2o9CnabRBvkSx/aCPgEB+spurwcVvbIHPQ0rOJeX8CNFSHBZcA3Lqm+c61JYWCKX460hc34PUgMEjsPGC5hRPiXoiyikZnB+JIzxx4gyG/nmIc0LJvYyYivN9KmOs9iR37zriF4e7zm3CdqoEzJNTXDDGzalmtTdQyk/Mu8wSciX900k7mzglJiUFoY/UNNEO7Cj7b0iXy2wAiM9HR81ylBEP2scpcbaKEKegArHSIrhHSpub12rQILiGgk7Ua9/7M2RFzCr8HGAOg6XkL/HhMCploo5ysQACfZ5ICW+C05Jd/R2slW1fFr3hDu2n1cs3iCINDHxfaDcYllCerJTkO64VdPMDgqGe/5IWYMRI/U5kxVbTVh5Auk49XlIkx7OdPJaFFkV+faLzdojE9O4Rb1Q+GlX+oNeJmTXaAEKFf2w0vRY3lfzoBhpP60gs3U9MpuIGltNqiNGge7QmoNf2a6a3lDtMtZWTH0URluffECBFxK8nYr0pcTyZgsL8mwsb9UScWPF/yOb8NBaWm6xJqWVEAieV9e65hN1WV5q1O1gtDBH7Z4F3vKYIas2yoUsCMfbaFYDW/atfM+NrohgfCVlXtd+HA3KUd5JOurIdGYUmrFREdpsocd1KKat0OGE+g6sJHEMD/leungRSfg/9HK/pmBYZcsMPIPT79XMAgVt9xSg/ACzBMXUVHfUjyNljD0bCNrypwjwc0kZ4DUhZdM33bO5qQTjRHzAQBgFL5VEUyOc1hbZPfeycu5v15jI0jn3lc38EAndpsf5hCgidtgoMrNjMA61OEkFMvOIxfxjqexrtT9jHJyAHGE4xP2ylqSaVg1IfIA2NhcrmHvN0M6K+SsvTW2DWcsKlLXZ4WV2ZDneTFxnFv7YBQUpSa53D7KCozArEHWQpn8FZhZwOcvDOC+iKRBsGDgy4z/o0JbsG43p8REcQJqkaX52VJ4BKt+I81GFRKc0uy7x0vFfS7zFMk+vt0Y//QKDYlRZ0rhewpVWX02+KaNc1H4UOkuW77C5XwvtLKGkSHqZCd9k2UZKGyS6k/ouGR1BTQBYoiO11ZuFvPALpP03Hk10NZT0UWEfbiXvlFKmtMAx8V1iOc1ArZLWWE4aXxmJsEh5C8mP6EcLyjGcSNpIxpv8jEn88x930hqypiSmRDdPm1FkI4qzGsQ8F3AA06kdcAhc9ocluOGrY9QOjgRK15LekE++ECpkLsgQnXyVS29k3iRuJDQwqyI6XJS0l0rkiMs0rtaIwN6xIbJzIKdYbqo4p81xjQKYMFqE9YRYbnGvfyI7EhPpkcnTWqceFQyl0xSVwzJ+recrssc5ODcaaiJ3iDZubflSntMgvWDmr1hAnlnEOBXRKmNvHGsaxiJ+OXcyqG2Uo5kJJdPXIGrGGOieNzBNDrAA4L27nJ21hIjjJoJM5kc7kGfJuMR6eu/zvSedI+5igmmC7aoU0TitHQV1Alw9tqj4ekKGRICUkgJJ+R0ZkvN1hEtYOJaE9szGWgQVhwyGGqV0gRl2jZ396uhNKHZbd/JZ+t1b7X3Z3+XElQ08p2UAcLYfIIIDiJkhJEwt6Gkysyqh15Izm92RvfB9zKSjwkoVpMQY6j4S9FROE9npmOsZuazo+5ggytIpyX/NSj2Wgr7f0oZM2DJhBVSQf4QiA8jWePGoWeNHPMNbZ9ZPp96PnvFBeAA0AzuzqSy5UCCyjAQyeiG+8RAJh6+A1va9n37xQ7213X6/C7AcWoIwDyDTuAdhYY1jdBT6kHx2P6W0+XjnlRrF4oiFUaYHcuZfnnTi4HNsNVySQjJvh+T9bBYjkoaV0GMBKAddN5lDoyc43Q/Q7PLh6RW//dGXfOr1b37Z6QC7OnYz2+/ZGgb0MICF8RdbE0TP0Au4ZGbWkodKk1ag0U6dZmw7M8OuwQzsp5/+z7s3/uSLLzsx1ZmAagjktaAeuQwSUT50f8D70CEkskEhnZlwdOBkY1NSMyeMQsivya9XDKpsbEbzh5bwf7T2GLx+ZMfQ8iq0SGV2yRT9KlzGma1gV8fDN73q3ld/xn3s9hdXuL7G2YG7Vprr+TBhzQB0B06S47CK6I7djlOPxk4/j1pbnkgn8fgaf+iT+M/f13/yZ3a3n+CR2kMuNUWmtH7EOGJjebIj984I0X5yUlQR+eC9MT4iEoWeSi0FPTqh7N3aWDNtMWv7A/WXSr2DqzaUllw6CVLEZmDx+O1cV5YScPn4XePFA77uk++/6ZWPfulDByN2bVxUN1oXOiNosAZjRzehuVYeLm0059hL3mbIam15P/1kQfvqZo9PeOnTJlmUobDNI7lHgfYR5xwkW01MYITo5OHJQ2fNWVkpizRmWxlIhgxHbR/spthP5Kximso86Q9AmjVBGwjGDuTmWfpuyF6Vx2ZKdLMAyZcfPXa86InTl37i3bsPsd+Nc6Y1TxIthSCCkOdSCU5A7JDSLoxd0DL4mCiTQgGzo8H69dWVcR9xI1MGkSolFKFwE5RRIY83DpQgGo9qN/thUAqawsxC61vglZGOUCmCGqyJqvUKfqb3Lx1/yftKyg4tOTyJfWmaidXhLolhMAyjMhkkjusr/JaPah/zkfbgcsDUrQXx0kEAyfLKIoyimVwJORIL99U4B3Ck7oho1hrle6VFYZxwFU7tFW0XVrJCnMFN2stCUBwwNjZ6PvIiEuRilWL463GsXKk7VH0YC309GrS1ay2oAL1hBSaLK9VElgpBxL6X9uEADQbwyxefXx8OBph1c45hagOhtAxh1viDR+IlVoEVep9AVVEidBrnHTPattYyCGECz6KtkHKo2LuC1sxoXmDRKNGSoq4IJkAg+VFSS5Md3nhDEC0YmxVWuuwlEju1wVHWouRA/iZmSSCcPad999RMZqPBstMZbSVhCFxfX59obRe5nbE+VtnEesRxpiirfGToJCZCrLa7Eycf77dTxINWsUuUdDn2GIPfUVoaMGVsksaGqm4JNoOkTwVujUZeEj+gZGJh90Y67OkPkgLnDQoXSSVcTXKDPe5ljap9HFpCCX2FPpg0ZiDagw7JtsPZ2WFvXb54aqZUPSHlWY3WS/1JITO1ovXT9hiE5Lre4cLpHpXz4AdHleK8JUpxXwlDhTrUWLgx41CV1mhIxDwEMboR0RIIUuNopKfwkpKEjGA5pGcFoXZSOFV8kx8b+BBUFpiswGDEVyGnio88vut9tf1+v9uNLKolCZbIFEOQk8BNwZmmKJkupeFR4edE6VjyCVO5XZVgGZRElypKzlz7kF+SKA1q2wfZPuTPMFWNWkE9KMrLQI8pW1/2s1wZkp6Kgodpd5HxU9KOTQpL7c7KexP0uVRkmXSX9n0mIf3q6vHjKxpaNlriwCYUu1j+r4/t1mpwg7wJoI2caMBB3ZJjHypbJPgzh3FF8oqbwIghygWgfr3mXpal4V4FIIkvxe4PzFaaalaBv0kQnirLChul1G+i2hTVKROWFxYRTFiMRaig658UtjMtCYQTeDqebT81O906RxcNmTBBR65WV9QAOFjo8Wg7wOzy2tBy4TrLtZSYIxSKf8XKAWGiaqovAKGbn4hTceIxBjqDBapUxBjSEB87EAjKy4S5j42HGY8mCjctlPZESqCY+pq00nC8NqlMqf4u1wcWgMrRGBXJTXwiWCrsSXZre/vFO7f+4y8fn9j307GjsNANDUWyx1i1QAPMOmlmu11jJzu64SOeuR6ILYLnxeShxuWrVp9rBwxOxICB5aUSmN4Pg1SUghCJkFxeMDeE3AoiMuI0wtyBsmsdwbcp38u/kjseipxAnDGkAwGsO4TiIOC+LvQmn+kHeqo5yJ7IxqGjeiT3B/z8B3af9uZnb+2PBAQx0f4EBagZEqpRwLPD2m6/N/Li4fV3vObBH/hd/dFVFndhAFBYnaiRT3iUU8W8blRB9h0ZxErMWFHkJiSBvW2Y3XhATNVDHM/Zzw86q/QyI2xAfEEy4FLdQWZvBrkRaQYnT9EXlmA4iTcFOEsVCYrrTwrTmZqis9a72YOrNqv/4wWVPUWzic1JXJ+uLw9vec3d1/6uR3cucLZPqiE2pB/+AlJATSgtyDb8bBKBTpJ4UG8RoF5hcrp/AUc3aWIJD1mYFaBM8Lulv44Kkg0HH2bPgzV1UGsVj/q5vkW65HuNcWLl4qB0GSkdRFCqLC1lcilL4lAURzYg6Ir/BUjKydbIWxpLvXX58PQtr77/Rz/j/gfutF2zPnG95dKR+R8KiiNg1foFM28sKeI0rWrypKJQVuNv7ccT59Tcp9gwlaSKhQGvngFTalBo1lK/q5eE5sked8VHgHIEJF0hTVVgpaQyVq8c0eVligfRIXKSxCmSnJw2TILQAPMvL/bf+Pl3vvJTHv2fO7vDjqR1uhVUYbHUsgLaJ6HgnqhU1OwgUEkRceW+qYNHU6S8fhi36PwFCGBM7XkKkn3lB8qVOJupSJPhmIBNgZouIascRwiZY36sif0L5S8fNisFJ9i1KbmydImopcHEcpI+tXarq5dAs375kN/8BQ/e+IqLu5fYw3ofqjhR98QViMokJOpFLJwbT1oJpdiOpBxVpJo9UcNMfoMZ2aThU7xwWKC1ZE+wADRi31ZptMYVl9i0Uzt5hVhRXdVErWroKci7+BShxIrYJApUuFo4ZMqV5gi9c+/CYaZXLnKuy0d44yvvf/Wn3/vAPdu1iSeqtYgDbW3Wj1JEFZCFq522GhdVN03IX6aSrv00DuORppomc/s/FEa0O4oN/JOS8ws5cDpVtoh5WvpVEk8laKrtBgr5ZzISI7WmC0xDexiJkYSl3xAFiLShkqQql7KmPM3s8mL/DV/w+Ot+38UL9wAju6gWYMxjM6B5THDGpNADab0A0QLdD1AxNaFDGD1MeYJwRlOjvzjUpdlQOzbCg5FGFUW4ivWu1WQPG6956y0WQcLkzELTBoFsv2JX4y15aH+HToVVtn4RFmXLgEIogTZW5SsAAK3Z5QP72s+5+6c+68GdC+z3CbIP4XAy0sdeX55wUdKaOMiAnJENqLGDdpddXoPgX2WqIEl75M/L9+25huZXhhPKkCqdpXV5XtH3nfIe58ZbbcAAa708ZFdNYE0WHY7QZxVVGu9xJvh1tHRIjX44Qkno0vpeaaPNWmu4eLj746+896decf8D93a7tvx9mCiCoNIG0ICzvT2+pg0ltoKbbUuZJblZegoMH7ysKFk4vKFYyRo5fZO4l2Ohep5VgVVldFTYqzAVIAuKl5dXFfKYmJO2Lk020Jy5kQ/bYOMpsZQ21QpTMJlDCMwRZDOzfrTd/uzWbRPd3a6dHj04fO0rH3zjK+9/8F5DmN0ikN4osUeyf31sT57br9xtTz9xgs2gLNWMisWtU/oWFHFspqWJzadVrmfXBasZnCylenAte50kVVvqpLBc9Ufb2vHy0W7XPv7jPnbX2ul0HeLGJnGCtaTCxpsUXr/0cdOKaNSqPZ4ExCTX0zIsPMjyjQB7T7fAEYH3nR08Pnz06Bd/6f/szs5pQGsNfHQfX/F77379Kx5+8L61FqyroHabmpjAQGsve6r/2D+1n3nv2Y982cXdR2LJgyz+wrUMDdNuTncp8fGyJI5uhNBQ0Jk4SO63hRqrpz/RVjlx2/LL2YDe7aknn/ypH/tzn/YpvzvNClkZnauaGUr2XvdmDdMJtSmEw9wrDHdSrM6GbML1U2+ttV1bls+rXvsVv/Bzv7A/Ozdja7h4ePZVv//et3zO/Rce7hd6TZpcDpZcaKtgxNUJH/ksf/o/3f6aH7/1e37rw947A9suXHOKM1aKMKdMk7n30iPF3ailjcxog6TLKxaociBBW7u3Ck9S6zfxk7Tl3Roe37n/6a/57Jd/5idfX1/v2k4KcFHqVw+bZM9JB8JY1d2qTk8/Hlvra2+M9trbF1sEHqz3vms7Al/4JV/7d/7WPz5/+pne+671i3uHr/r9D77t8+69cH/Xmt9q036OhcFZgz0+2TO3+t/9N7vX/+iLT9bOz6+ury/6qbVdF7/GyOvYWgrRpXaEKkimXHXgwGnqQS8OCEx6Eu6BCodDwM7pPJ6Ir6t8CJlJ9xedH3rvJHvv+SiTr11bilkgG82sB/hiDg6t6+w8uLpIKFH7A1vnScLg6XTeaWanfvqDr/+an/pLf/v2888dr6/2DRf32pe+/N63fM7lB++jpV2zcWpteLl9pH3EM/wH/7Z90TueOOEx2lnbn+8PxqsNoXx0hceRzqVqtWTvsyTQpcOerocIJgkLUD9+sZ+WSHboSsONqf+pjTv/kc5oYVmz1o7Xx7b8M0t+ZwZ7IZqiiOPNbrDarh0SwUsw/Su3LawAMcOmGRqatS/84q/+qb/4k7ef/3Wn4/V+v7t4cPiyV9x786se3b3YwYxN2h9papUr5vGxvfSp/o/+/fkX/fCz13a8te/XF9fWj/td2znVQc1MNOSmBi8d56TrRjEg96OBURxDdc8qWVhou8ID8K6tleaZqfekKn9sy9BhZIipnJnPdpZfc3LUsq2jGfNvUsQyE+OoAIxM1x6b+K8D+FjCTGvt9V/+pr/843/z9vO/9ng87nC8uL/7it/78Ltefffh4x28zAUUgizyuGPHc0+c/uF/wOvecfvxkYc9jmxm7KdT8UqW3q07cqB39dIs6u+VFj4YKUlTg4U6ISHLeLTNMQLx2+WKK6H6UTUNnFObCL99Do/TT0cETnJ6KZp0REHJh8Jub1LtMo3rueaOao2xsHVG4Oqk7Vp7w1d+w4/+8F990ct+zenEXePFndMXf8oLb/ncFz5030i2ZC6CLGliNzPY42N7/kn72Z87e/0PP3t5aod2feoEYG1vaP3UC2sU5gQ1RYVEKpM9q4JMONFRSXQskm51BvMfaMrpcdPMcDGOdl6OYVi1cLY8HZbKcrbBqRiNKOmmSBtnKNeqS+0oo7bVNOmxrcAgzpXhDrY/7N/w5W/8obf/0O3nnj4er3f73eWj89e//Phtn//whfso6QgTDxclr12f8NwTp3/2nv1r3/ncxWl/OODYK0UnfS+ziQ0xe64R1FitQTa06ExGAkQIH35N+lZaAcqWzr0ryTH5engKFy7F660y7cQJzZz5vdNvpzankGFNWd5hHbBA6Sj60WLmB5tcIwChBpIk9/v9V/zxb/6hd/7E7edfdrx+vGu8eHj+5a+4+p7XPby83rVWmHozGGOA2dURzz3Bn33v4bXvePGDy9Nhv+SULZT/ZC+id5Y2fq7PxuIGYOE2vp2CpL6WFPd3cNYMWJNhAfCQifTURfp2WmnrTIZgk7Ir72sCpQmb292YEeyCNyn5t/D6xc5gI5Jg9sOgTjLoy9v9qj/5lu//vp+4/bKPPJ24Q7+4c/rST33hOz7vhbsPc5fn9RaUb6ibnn/K3vW+9trvf/rB43a278fTVsJv2ka0yY6I1de8iGM2bf2qJ0QKKlcGRctTa4mCU1x9QnnDSr/FrGBZGUmZYsuTpsjTxdktn9JCW5N60uKLhf0wV7elUyNVhD4xQ++9d9vv91/9J7/1z7/tB28/98zp1He7dvnw8PpPv3jLq+78yl3rfj6ioTBSmUY2V6f2kiftX7xn95q3P/Pgqp0deDppexQrNfMNwOswvbBNaHbyXnciItbMb3WalH9Dkz1Bo4xGWRnUr3jPBepIYD8cUqbESdjkamA6BWQoCMuSJyM3/Mbayv6g4prF1AtLxDwc9n/sjX/2+77nHbeff/p0vNo1u3h064+84vq7Xvfo0eM9yiWhejOMpXsknn+K73rf4bXvePr+43Z24LF7/7Y683k2go0FOSdDK7rO1iaGyRyIQWYQZ+WS9YxuSs7XUt7blq9/zmsqTd+gMebrZO+njaonm1bliJ4zcsxU8HIGrPpIc0RMe2aWTLx3kofD/k+86Tu/93t+5PZLX3Y69R1OF3eOb/i0F77j8+7cuzCDtR2jx6g2TRFnj7295In+rve217z9qfuPcXbop16tb+c3MqciyqmHsWFzuarcWXMk9XmI7cIQzwUlcom8jWHJqOMENocAqa0vZ58osqY28ZNaCck+A6ckqCbamHn1VXBOq4V60eVgXZwPhf1+v/8TX/fWt7317beff7Z37tru4sHZl3zGxZs/9+4H73HRJQwBDIIwkSwXM7u6bs88wZ99z+7Vb3/23mU7O/B4gt2Ah98w3SJjK0O/pUGM25+nYwQEoA0TDboiTwU/bOG1mtTEsN5dX97K8zkDWtgNAmbY7ffa45DSVRAR1ffSJr1PdM6lZ1NN4VU8y2J0N9GO2HsnD4fD137Dd73trW+//dzTp+NVQ794ePjyV1x99+sePrraoQ2lCQV+aVAtBq9PeMmT/d3vP3zhDz57/zHOznjqsJtdd1IVJTNzYhiiM7YYrrDaj00VmlLpij7IhUYofusTyawVm3GEo2O1YF0neaXNCuHdLV916qfjBnHHPlyTt8x6m35J0wk2ql4QCwVucG1gpHXysN//6W9623e/9QduvfT5U2eDXdzlF/+eF97yuR+6+9AA2zVJIKv0eVlsxxOee7K/++faa/7803cusGRVN+zSaiEplUyXijzeZ9+CBYMHwkry5SzXFk4FzCY7nUUAbiyIiaj5bXZZFBJ2kvKxYoHQWtv13snuPot9iUidYgDruy+oOfQ+uPrKJVrVmRwnoBowroh0bnbUez8cDm/65rd9x5/93tsvebL33lq7fHj4ks98/O2ff++FB9b7YohicXjp4LTlTo8nPPck/+V7d69++zN3L+x8z1PfKGx8gFdRORtZcUcohtC79ZOYaGwfj8rCzXFQADQQcovBuhd+OJxzDgPq/CROuZ1hZYAFiUe7W5dXbK3tD/vWdh9Oe7P9O7b9Awu0yJSHV+oG15whkofD4eu/6bu+/Vu/9/ZLn++nU4NdPjz/spc/eMur7t57tEv2JXI+jbiRWmvt+mTPvojvet/hNe948b3LJauCrnBSKCtMkDkzm3Uanexg0Nj2O/HVDMgRG1m0OH/52BrLsUyht3MF6F7nlwT1Kaf/iqMa1DIyeo/BQncAqZOHJ2//o5/+Z3//H/yTT/qk33k6nmx4S0EFFttAXOXRxKw8AL33XWu3b58bGtVLmCpIMiX+L1nVt3z7O7/tzW+//dwz/XRqzS7u4Q2f9avf+fkPXngAo7UmiCnU/m28o2O3lzxhP/ve3eve8fTdx+3WoR87ii5sNggGC+IwTSzINn1rCySOBpyuui11R4LQ1QpeaDDaFaR3+cKcMMRqy0LZx8gMTibOyIkQVKIviqxIjJlGadE7267dfXD/s1/9lR/90b++nx6Tx7Y7W3bg3PzfQKFQpGu9t91hvz978KEPfObLP/EvvPO7j8frwdcXPIBZpTL6l/v9/tu/+x3f/Gfedvv55/vpsdnp4n57w2ddvuVVdz/0YBc8/5AF+aGeufr1qb3saXv3zx2+8J1P3bu08/F2uUFbm0YTxGPpPJ3STguifB0zPsCrK/6XX97ZTlUiBXqDugPGAKaQCsQ9iJ2jz5ThnrFTOTXCIWKSghIrKlzAbfdJ7Ke+P5yjtZ//H//dei/+17QPu4Fpde7BghTsd7vjnQ9+4Fd+Nc5aoKiUMHN3R7751/7G38XhaDwacHV19oc/9f6bX3nvwaO9e7TqSNSc5bCgGY+P7Zlb/JfvPXvNDzxz54Lnh37qKFEthjRYXeXBnQI6cToZ2qDsCPEd/YRjx7NP8N/9t92/ev/+cKv1WkdPSHgBPhJZLvMjoNOfjbYMiJYR4hWHELF92M4VmmK2zIMxDXWVPz/szHZmbWmsbaWBN1C/6um737V+duv81ov81rim5OjSiKfwxJNP0QA7XT1uv+Nj+nd+wYO7j9AaW0tbb4OKTseTPZ7suSf4L96DP/QDL7rz2G4deFzdQXCic6vFaebF7a0Dbp3h8sJO3Xq31qzBulc2zz91undx9qa/8eLHRzvf26mX6RzkipDvE1PpRpoU05RK/3V1YfGLUEauyxpYbiQ883y0dto5jHm/8ux9IC+i89AtFXLaGOEsTVa0yqz33mm9dz/HWvFHnFItpgL71M2wMwNPp6fOjtaIhiEkUd26FcJ6J55/qv/r95990Q8+eefCzs/7UWJEijeTEDaxGxwyavzgw8M1d2f73mm3zrA/oHe7umYDL6/x9/7t/q1/76n//Mtn57euT92lryHP1+JGhHIiiofHZTE6NQnitL3Ko3MAnRM+yqCMICkOKRrSoyCofjrtgMlIr6pjYnI1ZuXAK8Vbp770vpaIrftPIktH4ursl4+vTt12O6ZAzllPKZSFnU52e39613vPX/dDz/3qZT8/O576SgyQTh45Q2BSRHbicMve/d/OPvktTz19+2Rt39rOwH4arkkfvLf/+f/dDLx1fjz1UNRibfQpoiUZLC9qbebpO80MwT7lq2OSZ8xiy35M0rs8mG9Zbci8EiteaVB1FGKGA1lGkTnhSKhW4tdYDg6olXAtIKaqOAvHNMFC8WMpA4JpxNmBv3p/98U//PQH79ntQz+esHmkOFsZlOluOWM9R5Cc3vM/D9YPFlwK7ByS6Oe3CMOJkVuvv6YkLW7FIi6eMm8IHkNjxKIZ9yJCHaUltTln6UtaxsSq/4vodWWiZBFqq6dQ2tPFQ/KxXPJvInqe3DYqBh9qE1Y7E2HBdDMadrbbTe9/vUx75w726Orw4KLvd1cnNqudgAmHRw59cJOKmCluRuswu3W2RJAu3OwRonqf2WibEz9V0gJfuIhISiYGOdQWMfWO+41JFMXa0hhKGAE40ivG5vIqSr2iVuEGtYO1cg+hDdUzIVSxOfqPxjZPPqj9eBS9/Ijxu91+JwmYevUpmk0a+wkYQ6VmojgrDd/PJ89wWFyyaWZ2ciJwCsbkBOGamzzrD+HEDdGvSCQNr32TvkKMx2tWqYmwTea7O5XmyCmZ7EWpNaR7PbWLrNJKqrywWFFU7bnoGUUoMzll148qHKy4CAyr7rlJEyANg14whHNCQVnRC8NvlHEST6PNmYsAqitXVbetfB65LYw2K+QPdTccPDwWbD48Cdukg+VWm0uQjtLVLIlRUQ5UAYxMrtgohpwVE6NSQ724STkQc5h5dh2KxDdKVRSFOWnzTOu567xrkNnDtqFYBD2nLOPmgtCQncs09U7+k6nhHdUpobQqVr6Kimo5TlOGXVRBF2DkHrX/UoKeWNQoG9+q7sFTNKszn1H/3OpUUJuWYk44zpFHk/WkFfehWiaJokdP+yZgVel4a/fcMgAN5LCbdZ6UzIUq36FQKsINw8QBncjVkO4SBOWexGEmPbDCqzAFASjyTyG5rihRIRD3sSwAmmEVktOfgppWiE2kbXE5pzF+NzbBo+XEYtvAUuekL5cM7jI9Cyrptojt1OsSpQfYbUjjY1y4uP42dyq1Lp71MnezliLCPnLRUhloHWxhH2KVYvHJXT+MWETWl03QmEm/YouIC1pMWQvIcUCvTYExqaylXpFsRSbX3dj0AW4ShhOr9i9WnK8YveC8b0Ad3SydEpIYgBUcVjd7mv6DmMkLTs3z3D0s8CsRM45MiKl6kJ65NiK3GIGAQI0YZo1cS3AlQlRG6A28C1kui8dOljrBlCUa6kEbRkPFVogySB1FRCb+Wcpp3+SsgGvNok24q07HTk/UqYsv9Ul4OXLdt6YZFzNQPz1ag0Q15NflvMJF9yBdNcO00cSFpxD9JrMcGcq5yF5g1aulukuWZj1ijmNsGmDj/cK5BAErMAfjLcupqaeLTiWvRK8cZCysNqThok0ijLJ5borXPvM1x3QzJmFIB4Myy9vUXdlPDnGoqK27hWcArQPmI0uGSY5f9p6T3HWhxohVqoqP2w3t4o8L1ICFHD9oxdVaWZkywUrbP24yA5RcwAf+pfURg/iuUajysQtHg6JeC84TJ7678gDmlLk200yoYs4iy65I3jrNVgPRIUMdtJUUDBmwMEdLeU51Sg0Tq0oiRFMHlrJkoi6cxsqX7CJgWrI8pjVtEpC3hXRnrkyKzNJX9Tid7sUV+3oMcVpREWNTwiZDeRMx42yfkxIvuUDbDNVgYblo/FBiF8kS7Vf53TyVfZKpFo332qc3XPViLva4vYZiLkaWbZT5NrdWUbytKImAKZKpAJxS9oW7Uz4kH5vOGlXXQAK1fy/GUCTbhODOgFk5LJpUYkW1AkynL6adTWmGWAlfpl6YAObh0TpjgIJ11yU5N9e2zgWyF/RbYjbFX4vLfcJmWrJzVMHqSFXksJhmIeSWV6A+RF8yMW4MBtY5UpX5yP+f8gTzXm9rvhZWZWyKWlhEElhLj7LtVxkgOdpPR9Dk+OGoslAGOA8aVoCmkppBkbSSvUN1o81Qhinc9ID8ndGMrWn+iJlUD8Vz1HNInUAL8osiNpxwjGJMDSAR8qQ+I0vXDaqflUKyyggaYRu/v3oW5Ianyw01r3qHizd9Ie4lJDAtTs6jfDayR5SuKyeUTexm/RgvthUoOQT1+ROwBus9xm1zQ3pFYtJPSrdLtUPrqfcTIg+RkzvBy2lorCRwUbtXJ1s5SiJ/lsOhjXwN9SYwDVXQI1kVflZm30RwXkuXtpcO1slnnW5684qbZ3TOMod1d0bnh83HF6wS/W++eEkMIMPVGCtno8a1eexJSLxX44RMbR5zKEGuJugMaeaaRUX1wp2mGYS9q18Dg609FFBos4pAoZyauJkxL7oK8sO8Q6wJeeJOYJh5byzza4q4cdU1jr27WJ/BDys/kDbGCqlqTw9+nSw2iSPXqRArrZwyBjqytpkKWF56uPwi6y1pbae/k/9kKydrfaghKtP5ptEwGaRA8R4orDyszI1WttJcZaFpyl7zOFfHtNVr3hIWqw6MLH4QiVXEBJ1y2ixoQe/CrbtBo0XGBAqKzTdse1lAp+H5o9ZxBwXChTDG1LxAKz4AVGkhhDWQw8jcLxo638ZW7ghC6WZiw4TZhgsOJCTShNgm3R1btfArj9CK78GqVMINBnkoSa9aA1eBi4yeSu6Tw9PdSs9nQ5USLA53/cx5KDfg8Sq28Y78at4CVucWJxbubMMs8skcuBQEHnL0tAccO7N55q0s8Td5y5gbjVVMnPKwglQXYARhJjhLY8Q5TO1lTQb42DQQPl/tSpPRoGw1iSF5OEfXQRdL8cOVvrcOA0279frw19p9OLySw1iG2lJ6/6yrlZOIaHQWBuUtPP2daGnqpdI2FoPZZp4QeqgigZsyJKUOrYMVigeS1K+ERHn90yyvpkkLga5QrFekjM4ZalbDlgkAgVRDZdGKZVRk8uigx7pv1+QZTVAltFqZnbHVdjITPGojxw3QKP7QLCghc2QJoskVGnWoT4MLwAVj2ILCIexQFmNwU5+NdIJTAG6j3zT/PnVR6V8M16Yq70GRXk3EWRbS3XySOzrEudjKBsGo8rtI6fxvIc8n/TKszOpnsGgWjQSUkT2KKnCZG3cya0l2GyeAEg4G5pHdFKBAzVWVWRKetsi5W87Tm9x1SM7tCFsXOHr0YPbkAYsesl6g6HDmV0vFz7A+D1E9RsQ3bDyMNkIAe5GYRx4EUHrlyJ45NxwXIdgmRexbZkTRPzJtkQo3KU0NWISkWyNayPVczSb3mITc+ZjXMSsC2/mkiRle0D4qZL6lztGpU4Frvc06ywvxlLYM62xKuLAtWmSOgYwlla2xeiyeOteK3UDKAaHJZ5cCrF2a4PTYLDgSIof6qmXAF/smp+BW8ytKh3ujXayUm2aT31W61dbVPc/NgNkqy1WPv+Q5R/sr83HoWIUy9rgYWtJqLEm3uso8VMd8lOYqrN0ExkWoQQkNtprVWGCTaIKJ2hoKs2dztlqUkzKPETWXjcNeBR7pvYQ6F6u81GrLuiEPan6kxydpx3ew/ZeOOLRPIl0jGuaJeDnEyVK2hkx3pZ/EejzVofCYsxXJnqsKD7qZCm5gMzkxVVVugBAnIriypFnji8p8YvZ7aJU0WaefU9hIOjJwa/ZgQaVC7ljm6YSAORh/lvWTNKDDEDxZ1MrWhZa0iHcMmbgts/QUnUk2mjrwA2Vu3DQYe8NoP+IZsArFayreRANZjaDAlKVpCqycELZQwMtROPG6RVQATZJQW6IwsSB2dCNHeCYdMbJpTt1bQUHq1NlgAjEos9XlAQZzE5bBCUKsRGi56ZAKZJJgDsDSUVYlsY31JROBWBkPMpo45wiRYpfGFQUBE+s4G15BNJxpuxCSXAkDvvk75VmyVULadCC7VRE0ASTEJ7JM6WTyAxn4VxWmuKOgySSVaDvklCvkgnKVN2k5XSaBWDnyWnjDU5okhGhGIhpzSoN87elMW1EvOhPH5edCVCAnHuVqK65nsECGdOqA8rnbRCsjXigAnTIUmZZ4ZEW4l5fXt3qnqUuKKTTavgS2DxUr9l2lqQbk0GRRCQ3GJ6Y6zoUpMZoh3Xs8/xeHECPZdIiSuABTkrFggXOrxYIMunqikOoJ/WHa1agsZ64S/nXDjeGlOfFNoJuTnFpHW1Y2rCy55U+clVXH6K2Q5nltTuBZjtZNq77C/UUII2o2i5ixnR0gFi7ZwrsPGKz4F8oQNLfZyx4Jai+aMl6dJY+R1pv4MOdsrBysh5JmrZ0XmQlHJSlO1Bxtf1QvT9vGBAugwuLYY4PbV2jTyEe0QpODdBmWK4UjCQpwYab+P0WEIaMi1G1yDLampKFlPmOdzOaK/Gjq5rBBRjjPBLSV3LiqDaKxkyS1JZ9Okw/F/skpj0EtiYOXo6Z/1ba+EI6n4ciFfmmTHX3lTOtp2SYiJYu8i1Dxp4+nx6QbQegyGHLjBFaymijgHcvgxKDhlCiaLvJujo6ATkWoFpo2RFyvuyFJPpCQuvAX1pT5CTOzzJkTMlPd/wy60gd/rQ8dBgm3+jyvd62W45iETjJKmOVASZwvLrVh7oVIj8uDH3MQibvSmRTQsidQ8c2xwYLopY3JYoLk4yJNLDBpIWYKqbQujuAq568mEcogkLqYm0GCjx1BuY3SMAk5tZjo+CeKcx486UcBnbBubPnFt5jULWswCHkxBXaqD5SROq+GmWlpMT2oBhg/RzMUDFB9xfSgrRvNyMORLN4C026X4Sg5lVrfPdJTWWCMQkU0IJVZgQAKB2wUDTGjkKWbGOGD9Ba62Vo0xu2kiIITe8cGqsmJ9hpmhF3nBuhEVH03KHRUlOpqPSciXzggcOamEnYZbgZr0hdxEIGChi2jnzIRVdSMprTUGMgrjrQBNq5WiHc5BsEmrMzk/J4gqmC3QVxd6URDqvyC6wb7OK32VrxXBFig0KPnHF+MV6q7WdG72/odW3q2cJXNssKQXoQCk0OmTvuu4gZsgdNT6Gc2u4QboPEPWww5Zv8Ipb2TihXFTaQfVDtp6iumsLZW1JYmDBTUMrc91SmuxmBXKHhPt63IvdlZcFIKNphTsVnjC53ozfUM4EqZEnP59HqauEvpRintqMWEheTMriZtJTbz3J/RXphALdaOQPIauRhLc21mn6WgHIrTbo5PXUu8/Igp4LqPvwqqaVZLMj8kkCJKxwOVIiZzlGGuvuHeZpa2yE7BzfoRYeqSRi2yZ5iI2QarDjn7JhoSU8NU/FtKHhD4PimcuomDzMoALZLsVTO0OEoV5u1EEqmAbiYoKXuE2Dgl+rE5mEZ6u2HT68OP13MXgs1eqU7pIGlSuiWx3n94nwNsrLwjLEk3wqUzhmEiqeZxu6uQGES0aU6h9k0n3ds0/AMqjB732VYc1In2WRwGGhbPhlF8BDBeRF7T/jLBSmWqnI/hcZMolpEFmGkDq1c7PIzcj8SwooPPJ0sxMBFYghQV2lIRE9yABMdstFZBDuXkJrNUGUOxxT1RwAa7rFr70rYsWKxoVZFTgzKRc2vfskmJ+Y1Y6W3SnTJgq2Fb7jS1oW8mNUFNS2DWHmUW3pHSVy9FPcWl1R0SSGwDoEoox2poQiTWjGGuxYsj1FxLQ0EzkhZZz4Tqhqe4m4xYmcA004tMiJ4p3anux9goeEOWkW0MSz+wiVlJrjUOUCFBjgOaMssUwuSoL40lqReFsyDqgSX+UROOmk93JsUEmEUrOC4Ks15Mr3N8myqns/IZngRzHqHpeKprBsTQBDFgAQvUmpJIykicLlORSysuw3W30plQqbgOenlOXgw/43JOyuvRWWHgDMaoK6gHADEoQWuoTAZyrVhia5Gu0rZtY5IjN/KQJfxOrG/14hBvIXeAL6zq6KLCgLXamKicfReUIubduTdM9GqHLNaaF9UKcYj8BcSkVFi9gJxY7f77TDw6kiHtkHICcQXbLAs9owCVPe6iolx7Gy5Ty5TbpQ8ok1rI7N1hwq2RlXYYq28ONRi2RTrwFYVOUA+GpDtQiTlmOUEOo4WQS891aBKNoscCm2Tyso6nQZ1smlwj3PHoy4GJ32W6qwaZxfYN+YpjsUK6J+mbyKj+mJwuZl+SExLJUDYIsQZbFBg11/VnpOYjFgAWZy0S6kCeNVsv3C9ZzkwU2rqmY4XlEJYaTFMNxLRW8fShadAN6DA99rcnptA3pDC2sBe4q6RzFGcyTY8KvqDn5TovkMmWZQp5qKMmvyu3iJjgEcMaltJ5p1wJHZaMhhBxsZn17h3wUlKZtIccI+J8zpGFM2fFv1P6bvqlVJOl4NINS2/BFCfKYCiLKOxQT4rjQ8QuL8+beB+CnDTOrVkW1w+R3esClJLPE9+YKKeePOt5wEnDh+auU2wp+sMM/T2b0mXaNTf6hXrucIHBm6o/qF0zlPUI+BR31riAqsJDcR/izFmg2udOPPFIX7NloV03y94hdUBQNiCD91u8BzJ78tZJQ8ECNA+oko1iLKTsSZS50KGLmmWg1CxDeWjcYrlyovpy+t6RY4M6MkinbZXSZcTQXQvyYJizrQCNkUWv8InkLdNPcgU4WfUcOrnb0uyWMtYcKognomfjFlKl0krylgLC3lYJA2bxkvHMq9EVhGWxoli/a+mmHl3IwVZUK6s4XtdT1GJxFYpDZUCuiyzcyCeZIri6G2EFpVXti65C88EWY8nPg/2YmQiDEy5nf9DoxdOCkq2m5VcI0BzwKk2o0j7WCcR+ngdXk7mjqGFFB2UTi190Tu61nG3PDQHGpKSPd1vEZOMM9fW8cmUna/9K/IBns15WKKfQGoiqqFDq4yQUChtZpk0DhCE0ydEqY1qqC7oRThx2JQnnVDRGNjDEoBB6KyoDMzysJigiWOoosLtrXhgGPAKVFEof0ydrOUmJOnFicpZYkeJGt3vpSkdOwdm0bJtXtdF95TSEOWzOpSlRGCgoOLsKRrnC2PTe+9Qn04ZNGsjZ5lSzLXcJzk0oohgCz1pmVkJYzjqN0e9MjixlpSfd1Q0Mqb3IQh5GaJNy3DNZ7PPS21fKYXFwlw23kvOKmc+shNkm4AmBeloRayhVRVGFa7/h3GtVi5G6kWoomxOMvVCvRjSsao+aAs3jUl2txHBTcEIWsNI6ClECqWq0tB4EQWW4RsQdY9CdH5+kpvjIlv7OEFeZQdrzWs65Qo5Lm93EkdSTfO2cuXLIXWMItjVmr3TeEvWjMKXMZiPPYr2UyH2vbD3mwTHaoyQaUTdZtt1V1+l9g+3pQBjndhkDo3CIjI4TR94YIslhWsy1NyhX5GLxfQo/NXKZPipmh6lXoJDkWK2ft3R02IjAvJH2OgfmGteEUmQ3hsm57MJcsytF2rAlThJvnY3rm8mMyPIaOniyIrKBz08zkjDnm2vF5Sz/hlDdRWqSpgK26mQlJTB3RxPVnBMmGdAgRVflIvJyBmHVP91kPm/G41VyS51ADU6NCm704arFD2ejTyWEOh49tqGtHQotMyDOIGUKeal23r4gNVnxTnuq7gMpwBRXBN0AtcFAVchUxwsyW3zZX6EMCqWgNiacLIi/mR8V8ZQZFL6YzO6IqIXNxWTMsIqtG1t41uG4gXqZ5D3BkNoIp1ovIXup0fooXfOSds9jjkKHzd6XgaTOtYhNIQoYL06lRsuCM7ptybsQ66T4dzDsV33thAVLzmgo5VcRRaSFqIp/F56oc4HZaqkXs5lU3RGkNkJcopywAmGY0VbGpLCb9m8Vh9W2VARdWQC8yY9l9vrj9rGASE8n90bxdzY1G1X2HMTXKIZRo4zxXuaoGFlunZpOi49N8obhlhuisCpYVrkVQIzFY8YNkLBoDJI1sLB/kwuCKJlG+ziG0MTOlqaSEKch6vqlaAQ36FbzCwNKt6A4X3Fz7F1JcmFVVwwU/qpZbZIsx4zOKVbfD9jWpOXQeA04FoRS77Jx4QOCUZGqslijj7bEc8rgD8yegNpMxJRIjPwN1OQy52ktP7hf5S0xvU2GGiRpP+UHZU6CtoBRBo3oTKM5A2RtK5TGtdeDkKEuSwaMzbydZbJn1IsiGI7GOBO7gvb/aqveomeNabTrOJlSb6vUhxgLoTE9qDqSiMUANkJ5NJp11LOEZXAnvJ6DElTiYHWoHW0zNaqBOJ3rx/kYpkeU7W0prDQd0rnuBCiFQ2mq5GTFaLMoq9lNNuNVlovJdD98++MAZZWLOeEMMfpILAlJvTfRFMmQq9kBx5u9oHRRc8NbMcS+edYFJkqrFn06p2yL7stwONgStJObZYmVzqcXDyIsm7ks0kjF+tMHgocKawFq8sFStRdamcRRbuo8bbBW0Mx4PJ5OHWOuZXXnSy/BBMRmBpUbLnFgyHD0MfkLpm0uuXIZIRBMZJFrbfaeUf0r5nYWcxS6Zj1KJ1rWdlvLBdYFT3QVQgQgTR4m6FU4rOXEoACmlcNJITGqS7NVA92FnnGtjelpm1qFLpWp5IuvW+U+wrWEEj6XmQ0UKW11DksjOK2xQOktCNkqTEDp43aoCg9uODEW2EG4lfI4EeYrgyYxt+KCuAG0rGGxTjvdhY7pG4TVLs4LQ6whyjh6MCkIWDUDNLVKXji0f+D5zG6/74OTXo0BLC3Jl2XXaZ2dht1uP8YXYnd+fna2t2O3PjJN0NCD8hM+cYZWx1einCwUWnltI8qoNy1VEg8JCwcRMBeKl+cwSUWZyGhq2mLR+EwSh9Qe41/23A7Ksl4KW8zCzzQRdCYVgFJi14qIqRqS201SB6deOatfsFk7XF1bay3mQ1lLhpAVHhl2bTz1x1eneD+Xp9ZgPFnbDw3cGMmyjKU8DbPo3c4aeN0NaqOiduTMGTyjaQqR4zCY5MzpE0wbDiVa6/jQlUjMNvOMlNwCUihQYegYCUXabnf712zQe2ZyRMkRUjSK2pMVLyrmrMyk06aZWjRZnA8u8gUE6yOG0ZBs+/a//+f/+m2f8HG/8Td81OnUAfTe+6nHnmZn7zyeTr13dnbyx37ir//oj/6V3a1b3dB2/L8vnD76eX7CR5/2eyxDq3c72++H+RkMDTzseLzm9/z9s3e//+zsDNFRk24/tcNZrlu8KAt32GQyL1CpfrMk3j7sP2N3pahHHjxYzPWDnHv27McTkvfN1nCY8lmUVgAUc68lUVA4s0mUg1vAiR4v/htqDZkKKwCn43F/dvtjf9NHNeveOaA1ADszGjtJQzPsGuzy8eV/fd/7d63tdmfLcj+diLb7Lb+uHxqPp5MZWmt+BC9X13bgnQf95z+Aw1lTv2nMg6RiJmpOMY8BqpSWHpiDH9ObHVYbwz7idTUeSzQfMZK4cqCkdrK8kSyzcHjJx+vgoZxrbVYGPXuHTQQd4ccZjUqNYzOKVP26fCaymPv7CYVUd6BIfRrQza4vH1s/lRaPqTp6Z4DxZMbzW7d1Ktmypa4e28rbTYMQrfH8YJ2zYipnDGamJMR4KnWX6tStyn/lx0UpHWlskPImCWqMruVmc94gL5oVB+Z+XSbFrlebKshRBOnaSuBXS7KqaaQj4L4GuWpCJeHQqGRGPZt6J2Dnt84wj3ud5zcNSISdTMt0moH9/FyRzo39abSeev/S2faxS5YMR/XMFHJsSPSxkE+0mBkoibghVxpsYDycYVnpHul/jQrzVMaS7VUqK9CrmqHJoEuG9tULsDhpZ18z7WVFjg5pawvXNFx7NSGrOXfWYpzsPMOnatgx1KHenCbm9iK1Cp5SZXeI35uy2DbkgtwkfIwh7EixocjxPEjmUwUrXwU39VrTG049S8v8ZueK+Vttue/S3RTe9YSchky3XUPSeWkrCw0hWaDYSSoLAKKtSW8+gY5ro5OiUAkXUF+8FIt8aVEGAQnqbZWcDmy3JNKrQ5t0CUJZeiuEUBG6jDHDcU6rQsxcotolqSo/nf8zq5KByBnL16gSRROdA+SaTLxDotQUY6wxGhUyBYZQJlSM9tNW+Jbf7Uzaq1poUCBgs6nXXDreCm1D/CApNa1yfbnRf96aCoQCBK4kWBOiMJzM1WI1nWxzIkSZyYkyMbFoJAWtcXZPKjxycmJI1rmyNfW2h6skYMRehAdBMzEkxZgS5wMRh5Vqd77rnDQ8xzFJG6FGs6J95koZOmOm85E39Rq3a/q1W89NvLAyHQFm80yuou1EyHMp1i/IVZda8RFHlDORyHeU8qnqp/x/8LCgUBcqgVLpnSGPaMnLVMdpsjzBKL2w4sJUg1coVzSN0V2xIxxjbZ0PtACV/7zNCpq7T8VgdOp9GdecGH7YmtNDMdT8Rs8RJeGlRjNiCSY+PXLF6vAJYQyE4UlYAqr9KpW27opHdc0PW1PJeQVjh08LmmAnjZuR/iCMQ5CSLw4XXobDtqIWMseXq3GdYssbTCyKJQUSKxAMwSZW/0x6G/7HVJOElP1AjH45k0/y1tLVVNQCIusRK6awRPa0Vf0pJlAjLZ4mO3CKvZKrWNxlh2GEFkWxpKCRZFJauOJeYftkOEBZSSZgZFYxkReRVCstQTKQkng/h0WjRWlY5lOMfT9JwiBOHatWFC39OphNUBR/rajLKAZpoqtIJTiFROHVDwO6ysVb1EUZmCL/SHsHrU1SL1OnJRb1GUNzO5XVJqlPil+9mTH5gYTefIET9nESpKeKg4vS5YZKvEDWWX1AsWOTMzgn01MVN9nkYvGu1bRc3XaVsBJwrMFdhWL+tcAvgTgFhCCmqTbp1KdyuiaBgMxfLrACaFY+B5qpRYNGXRakkKVMr6m5t/CHJuBI0CSrmlKo3lzWTbOQ32eP0flq4bGq/j2ifEh009th4ghZorLw/EJEMVS0dRRgLfpiLr3au0s7xq+KzNFioiwsSNw82VIB18oEQdQu4bWCdUJAjbIzxR+ogitWGwrxQ6dzI4USY9uTQZ1zKv0blEICMnZ7MD99WByLRSlsJQWIQFbGjU+800ppRw71seh3kNWCbNC7t0bB0YNbIbQaU22ZWixTubHpYBQ1vE2dCCdVXGiwU6Onw6VXfmriEaDFNXRSntBDkQcQdGeEwU0Uu4nSrsigWZpRgzZjNIebzYqa1RZWJWtT0nESObdF+Kb6D4ghmhZDVKauUuoCy46iEZMcBDJ5xk+MhPEtE0/40ARFN1gwvok7DzE8F2S3TPKWGtGEgrsqrnTogs/FIVeWp/7bwWbQYRp2w2TfwnWzraYxSq5QRbbCGKT5iPfKn7ekBGvx78YD6lUgFo9rzrMHYhnKiEEAJqKnsjIFSkpVOAePCjPRUpOZirWwkcNeYAlCVYMm4FA49UZzN92XdUyJGWfXOmG+OrlC4mP6rgQbnsJ1xwZpnNW3MSYqCSNRqvqtXnJQ8+PMbt6m3Oj2z67JizmPkxnS9xjgyppRR2jrWHtEvQhFYHX6QfG+gSBt6iUf2z3b5izULqjcatJTyYwSrqVRde60e3pwZRMaFJJprYzAwnnZQ1pSsE1uFIqQIjRLUMckcWXL+SrQSTRS/5EN3KQdT9CaCEjGi4nyrZwJk7Jk+JNPf5RKbnCa/kvtc1CpHkiIOrlbkjM7CX3lYExJMaDgC6s7eTn+MSOlaqsMqeyzNhW4RbMmmcJR+XtpojaRgKO2BsowBWRdUy3A1KWPVDwPQPODHpvqkNI5sJQdU9xcuNIO1MOYkwAsDlkd5Axssv0sieGmQ2xypvHIuhC8Vqpr1igaAe3N50fcNM/ZLfzBgkhRvdYrp5+waZZ8pghuUucAjDtAh1xzS82FMnXEW2xidx1wcpnEZPVQGqZuKx/VG5REnulhSpjVZB9C/IKOlgzQ3DSEia00Vr0dcfBFFrwkq0saS5an1KS056fEasGwMPdAqL5FKL7fyC6tkMUI25CtpqVQQrPLAmF6RVVDvsrSz78h1mkoctmcKDrpu9J70aeu6Imt4BomNlAI/1j8KYRbHMI0yhzbHHGtmhLVgIW1F8Z040KBKI5dxfAmyaNWHH6wpmIHtahal87ybVEx6qxhcmJJr6R1OmNKWplWh765PcfYxlMEQRLmpigK9bUpDHyQ2xZTI1a0AobWhDjNxkLYw3jiIKfgDZuNXzeiXtTraWSk7kUyyApJVTCl7Wmzj4rlGzc7RdJHz14QV8FQpzkUh6rJhNwMZcyFTn1GDjBbZReYwSd3Wp2SF5QRiKoMlFEtxQ97wz8i4WRrYnlcx1atns/UlXGQAZovUYbrpCY+wDQ3gSMzN4V25YsxL7Uniok2z0R+cw2oJxpL275K/mZehpq5TyiwjustliyCnSGty1KtD5ss5ETRD+FPIEi1UoBVSh5QmXExenHYVm34T8VSaNrJxGbdrQUditssspUgcjuZpK6rHwWhjReTComh25MWqPbsc0c5SCLhjajEsiRwQ8++9c6ezQwDbS04LxUHFyZ3dIjDmp+2ORlbB8pbmqzovET1rnHcgLML6zoTjSNsE1NdKDvVCDrSA5XJSwainsHTcDPPYQI9K/6g4X1YrJjdtJIZtpIa7YrlxOuDS5awc1yUnhaiZ4MMNeKW6oorYZwmS2XcbXrCFkOfiWFTy0KZlSXsn+i3qTlD4FWoMpJSlAyHLqQFj/h6riuCHIyl5bNOytFhL+kXoxMCxEQzGlJIjSq5TdnRqjNzfhQ1VM4hE6uBMqKZrgorCtmcplJGd5YCS0imLIFihUAXx8LoumPqrgsapR6ZyAiFzIQzR547LAshD9N2VLZzSO/hppAbjXb/u/8PQp3G5hvP/KwAAAAASUVORK5CYII=" alt="Tawjeh"><span>Tawjeh</span></div>
+        <span class="cr-x">×</span>
+        <div class="cr-brand"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAVQklEQVR4Xu2dCXwURb7H/1XdPVdOEpAAObiUwwON1y4ga1BQeSAPMRERT8Qo7rqLx8qpciyKsKIiPmEV1ueiK1FBFPStSBRZZBWPxVVA7jMhIfdkru6uep/q7ulJwhzdc2Tw88mXD8xMVXfVv/+/uru6QdBBUkFJzb2DDgGSTUcNSDIdAiSZDgGSTIcASaZDgCTTIUCS6RAgyZy1AlBK0crSb+yN1ZmpUgbnECVHBhKbu1IZ53up3FkgqIsoggUQYKBABAxeWaCnBcSdRogep1ZaIfCooWtz5+bU3FRn8XPgQQjRJPv7DM4qAZjTy2Z+13lvRdr5YoNwvuyDgZTSczmZ70kI6iYiascycADMjxwAEP1CAlAgGMuYk1w8pZWAuUOUQz9jju5OsUr/4a/o/NMjj6TVnC1inBUCrC1ey1V1umDQ6Xr7LaKTGw4i6kYpyZYJb8WIIqo4GgFVzGX/qp/sjwpWfgfKk/pdLe8IKEIUIeIBHmqAykftDrE87TzvW9OeGfhTsoVImgBKaS+pTjnk8F3prpce9bhREUjYihCwOM2XfldrsOAQFgfEUM9hBMLYDwRIO5kCRzEniRY7/Tg9HT2X67F+U1LWpRk0ydqTEJeTWJ6f6eza+GPjNZIkTvR58HCg2O5vTkI5OJ6oXtZqjYCaBAv9xG6na3IcmV/cszqtWjusXWiHyw2wenW57eimvBt8TY5SJEtXSgRltii47WgMqxuBegLAUSTQeoykz2w5npfmrO6/RYtMOO0mwM4VVFi/8eALsstyF6VgZy16aycEmo6Eo2bXIle1FLCmieOpm0ttXnZB/um5JUsHuxNtS8KvecV9Ox1V1dnD3B5hEfGhCxGQhOdpFtY3KP2OJgUTAlnd5Zk8mnvltCPbi4qKJO3QuJNQZ6ydWpX6fYXn97QJHqCE6wGIJDbDOOHXAnHyPt4hv3Dhbb1fLSlBPi06riTMH9sWVad9+mXDX7xN1rGEUpuaU+KbGWUApV2VOlDllAEsUKKPgsLDjlHrAeuoEUddFqv0au9hPWfe8Rhq1g+LE0YsMgUbXi4urertrPS84HNaRwGSlNY27hmFwC+A+smciIC3UrA6EDTX6YcZBAEBGTjEe6wp5DVHN++8x17pW6VHx4G4+2XlgwfOO3bM9mfRJV8HFAtqBmqdbm8QRyF3oAUuuMoC6VkcrF3YANREF6TOI9TjEQK31U7WDOxZM7NkWWHchqrGrTHAy9N3dar8MaXM504ZBlQUWPIsA6oUSXYEqwm0VTMRC3ppV1Jm/Qv7g4H1NV378nDVzQ7ofZED0rN4OHXEBy9NrQYqqccbyp61XNrcDFEEFMui4KDrsorqS6dNu6ReOyomDNlhhLWTG7J2VdetkZut1xHwIcURzCFshKFnQwHRYOs3scFGMAhhYPUtJZsqjr/8unSw2tl6kcrJg15YPvU0EJGpFs2Fq/UBc8gnOMSXzhdSnywpO8epR0eJeTuC8HjxgQy7F83xufnfEYIsamiLpJXizv4aE0AtcwHCGcmcjwWA3P48DBhig8LhqZCWxZ/R4VYc9JqvAa1QO3RAPkAcXycI8px5H/ZcrkdHiXk7gjBr/P47pSbrc0imWcrIoYUL23a/LeMi0dZR6m9tYY5i4HgK3ftz8KsxKVBwvg06nSOwEqof3xJdAJmdy0KYZVpVUAPCoxwX+EGRXGnPEic+ubZvuT80GoJba4LF9+8/5/RB/gckc+cES6zlJCda9DRYe0xVCVI7E7h+cjpcNCwNLNZAUxMKRYAHq4BKatPot0mpKCbtU/oFtrgnyNWZ3VMufnxVl5N6pEmC+cwwT0880qmhXnoHeR1FBETEyn6iYCJgnkK3fgIMKrJA4bVpYE/h9fhIMAGWTa0GUGpAoDhHJYAqoTJj5m3eVf0zez08aQ1q1A8wQdQeKy8v57c8X/AH0W19BmSZNY7RJxYG9WIBLCkUhhY74JLhadApRwCMzeV2Yr8Hlv/2NIDSB7QQQIs3hWKU1ikjOIWz0dT5f89djxCK3MG1Iar8GfOKD1zocVr/Rn30Ij0wAbDSak2V4KZHOsH5g9OA46Mz+eCuZnj1sTqgcgwXHQRCOcqniFvSkWPc4xu6NOkRBonKlvJyyn+6/MgMqR7PQRQJekQQYu0DOAvAbyba4epbsoDXpnXRsPOTBli32AmEtB0WxIZaC7CU2tV578w1/V7XIwwSlS3LH67Jq/ip6RNJxP0wwiEcrCXNPoLGR4KNUCjkX8DBhJnZkNlFG91GAZEpfLiiBnas8/hbnrihJoeAt3v39cnHw+5+uVelFmWIqAT404TDc5y1/FNUAoyxOhZvC0XaREz5IfuDdSLVDLWcIvjvh21wxQ1ZMc2cayp88PeFtXBid2JWldlVcFggjkzn9FllfRfrEQYwfVmvLzyevfcLcTfxcV3Y71BdL0Xq0DCUAOEg2hidsxKY8VY3SEkP28qFhTU5299vgI9XNgERg9saC2oRYn0vBs5Kd2b0lMf80UQtMG3RggmH7m+qtryMqcy2GoRMQCnBykIN+xa6pGuHtML/M+8CBA8s7RFT6T+wywXvLamD2pPqWpFZgtnH0MO0FVelKGJUk5ZJ759R1uNd/56MSJiyiK3xf/yZ+x3Zh0bqgQnAvwpZOIqH4odz9HAzsOZtz9dO+PClJqg7wZoerUBECXN4pNMRxsRi873UrVvNjNKVl7n0iDBESLI1C+8+dmXzcfK2LOOCSMbEglp0EAy+2Qpj7u+shRqDOcrnkeHr/2uAT193g1eZHslKkxiuJkbCiABMdM5Kv+2alTr2oTXZx/WIMERIMgClFD857nApcQtLZIk69IgE4BdgyM1WGG1QADbSqa30wcEf3LDzIxcc302UdR8lNWXJx99UJA6WAxaQKyud3PDo2vytekQYDFu0eDFNad52bIm7CZey3Wp6RAJQBcAwpNgKo0uztdDQ1FV54dvNzbDnSx9UHhBB9qmlUR2JEUBUWySJwupIo7VWKEtEmFrSyNx56/Pm6uFhMGzSs8WHchqdXJnog6GxrvlEqs7+GhCpCWpukGD7+/Xw1QYvuJ0UiLLMwP4g4C0Ag0ZwkNUVw+ZVkroMHi7TOKAIhTDwDrJtwQd5w4zstDNs0aLig/0am7hyWcTdDJ9kAFbCGC1LmX+uGkwAyUeg7pQIu//lhh0bnFBbwU5QxzcIU0jN5CB3IIKh49OhYKAdmmpFWHR7BYDEik08LT8TZfDAGgdebCgcTgtKpvdp0CNDYNiiP912/JrmarKJSmxLuOHTooIozTaCX99sgRsfUKYbSq2pOOiGf3/ugt3bXVB9mB2hiacsT1MYONgGAwez25A2ECys+QGor/bBokmVAHJsnbAx1NoHHCKZBU1XTf/LgO16VAgMe3L++MMPNtdZliFll0Pr08I1KabaUA3/8YWjBCh+JAdOn/TCF+80wZ7tXnDWU/W2ora305YOcMlIC1x+fTpkd7OAxcruCWsJxVmAcNepog6g2c0ia4b7t/PWnRvxjlnY5Fry1NjDz3mceJp6EWrpikSw5qUtQY9hXxFA174IBgy2wY4PXOCq1Uo8osDxAI4MgAFDrXDV+Azo3D30OpEiwO2VAFLsAgSjdQFTmyB2w8ae5lv25Pq+D2kRITEswJwb978tNltKzAjAiKYGtES9AclgzifQOQ/DwCF2GHS1A3J6WSPeF6iv8sGzt1cClWMdOgTnjOtjGrC1IZv4wYKNvcZGev7AsE1PjD601ecWrkpEKQqHMuAlGAATuHgED0NvyoSuBVbDS9NMAKUGJEiAUHA23/aL7uw9rKQEhV0IM2gTRTOuP/EdFekgteNrXxEEuwwjJ6fB4LGd9CbLKImuAaGgAv1x2EN5l44ahbx6YBAM2cS2Gz4x6uRu0Uf7tXS+oZNjxJKCYPgdDvj1mAx9ZGOGZAlAkLz30vsKLikpQWG3uBvyIVuGmDXq+F7qQ339C2VajLEEYqD3ZTxMnNkZHOnGb8C3JFkCUIHs7TUuv7C0FIVdlDPkP6UGjK74UfSQAWoNCC1AsKHaGR1ViLAAbPsi21UHMH56Klx6baYeYxY2Cnp2Uvs3QYiX91w8uaAwPjUAKJp9Q8VO2ScVtj2lbQJ+n7YVwRRsHQcQCCkUHv9bTkw3ZALzgPbtA7BAvh03Lv9Xl5UiUTcmCIbdNHv0kU8kN75WLfXhTwtWC0yhDeV6FQJMeTY3prQCo6DAzDnRsOvnbWTL/I35IyJtVTFs0ewxR/5XcuHbjQgQK2rThGDoBAH+a0pXPTwaklEDmP283fPWgo3nTdQNCYFhT84de3iBuwnPUk7QimTMJT0U2lLyiHttMHxC5OXocPhrALs3kPBGSKm5bMIogS2DLHzqvd6zdENCYNh9C287cmdDJbcagaxtPU8gmgAjJ9ug6Nb4CBBtE8QKWMixQhvUiqvW3vQs8Y6ZZb3f0CNDYNiiZyYdHtxYiT6VKWdjb8dIKP4aMNkGw+MmQMLLv+4VwiG5ex9n4R/+p/8uLSgkhgV4euKR3s01sFkUuV44/PJG7Ght27X32uPWBLWHAEwCpYfkoWb8Tbn5l0WYAzAMC7Dk1sbO9Y21b4ge7vqWDVDbpYHQY3szqNV4xL12KPqFCUAAs+Hzx/M35I4ysjXFsACbfketXx89Ot/r4h+hhK2OBSf8BMsY/tn2yCl2KLolthpQx9aC2DyAhG+C4jKgoEoPSTMy5MdmvZf/Zz08DKaynHfTgYmeRsvLlEKGHpgIlD5ArQGxNkGnT3pgyV1MAD7RQwd1R5+FNjk6iUVPvNn3Gz0iDKYEWHr7yQHVVb73qMT11wMTQRyHofu+d8Frj9YqF2rqYqOAAAHBgbal2+TiP5YZ255oyibWDH15+OAqySVMDHaqmSFbWOIowBfrGmDTcrZtP/ETSIKRbE/1Lrkit/eTo5aFX4b2c6YXI/D83QdGV520vE9EttkmmpF1ZJQ+BCEYea8NiiaE3pYSCZbOG/NPwZ6t7J5I4N5afPHfoqIAHFeV3sk9eebbfT7UIiNi2qLy1YdsW95FO0Q3N4j9Np2AAfROOEYB3M0SPDvpFHia2OYslmQirGX2auLa5K2F5/UcV7IU1eqREYjKonl37Z3gqrD/FSRkjSqBCAQEiG0Y+v3njfD2/HogFCuvVmw7ZI4HzFK12UU0NcvzwJx3+qw0siHLT1QWLX3qUGbNTrROcuGrE3NRansdyzyAbdB9c2E1/LxdVtNrM85s6aFYrkBNhy2de37MzUFDSldG3ozVkqjyVjbq3rTvTrHZvgwRlBLruL8tqgCsE2YCZOnhhqEAe3Y2w7uL66G59kzb/E7z/4rKCX5YP8hRX5ducOu0v+a9p4cbJOq8X7ytJreqtvk19qwAu6CoEwqJvwaYF8DtlGHdshr4T7lP7Xvb0FoA9u1MkYxCAFPeJm8Y5MibVFKGTL87Imq/sduUT5fsH+NssJVRmVjY8yfh55qh8J8TcILfQSOn2EzPhFlt/PqjBtj4ihN8ruBDz7buPvOI8Pj7KDbz5Th6IsUB981Yn/tRpD1AwTCbdyvYaH32jQdekZ2OKQASCt4fsLBQdrE4/zmBohpLE3TsZxeseLgWZA+bl7LONzaCLa2ov9jQFlPOCisG3ZX3+2hfaRbMY6Zgjy19+Jl7E/XiIcGfG2gfAdjDeEd+8sC7z52G2qNqo8IkjfwWCfMoGwZYMRHkf2cWyDdOX9nnqB5pkiAOM8/cCUeucdWjFSBCH3WrOHs/m5Gy1zL7QClTqzjW5gGRmyBWQvd/54KPX22Eiv0iAOX0UhuXC9StU+1i0nKYHLFnektml/X7SjskKuJiH3tyfsvzx6d6nfAMBmpnYW3b3mBVORSBJiiyAKzk79hUB5tXucDTxM5V79cpIhrLzgCqRUxYQCJgDhp5mzR13obeb5oZ8wcjLgIw2DrRPw8dWiL7LFNAolbENs0adHhb/J2c2gkHnwl73QQqD3tga1kj/PSFxPbtKjNStoZkpO6ZRlmfYl+Qx2KlS3vk5i0oXRn5hksk4iYAg/UHm//pWehxwWSgrCawcZF5EfxN0Ih77DB8YqATVh7EO+WDY3u8cPA7L+z7xguN1eo76JRLUXQLPvKJHn/pZ484YZFL8a7ok904757V8XlxXzwtVVhyX2Pn+sraecSDJhOZs0QlgOJRDD0vQXDdPVnQVOuDk/t9cGy3DHWVErjqKHiaY19aYNmETsLvePWZBAAQ7Wnii5en9Jo3Ksp3AwUjZPaxsHTpd5m1n2cvlVzoViojK7sYMxkpl6u9W0558Sor1cpzS+zhB6wufbF3xcXW/AYVoFUYBSDKe4GQ25JGXu2fkj872hczhcKMX0yxbdG2tM3bezzqc+FSQlBXlhEblxsTo0Wzoh+sdqpqOiqx1oBgsHyp8opl5S0kAALU2ezeFy097MtmLs+t0Q+ME/G/ghasXn3Itn8dGU+8lqeoiPqyyYux4WnyUDpyyl55SgBb4GdbmjRzQI+CTSVLw2+yjZaECuBnyd37Bp6usrwDHr6/9syLWs3VYn5WoTZ8iCKL9C9Hqvu+J8oG/JBIA9tFAAYbIf1ja8PjsihMpEgooJKsVQW9QdE+2wuWrzKf1UZNFBCHCUX4KLU6y7K74yXxfk90MNr1qpUm6QN6BRKtd1EPLZYJSWUmqA5QulbdsHigShsszcDzByps/oDcnFV818pZVg2Y1GNrpGe74kUw6xIOE+LUp6jQWU/mih7Hb9h7ppXhaiunxE4oAagywlKfusQcJtgmf5WdzU3PdeZ+VVIGnlhnt2Y407p2hAlx4h94hLuRTCYyHoQllCNTZGNGqR5g/7aczPk/jZkdXADKlhJ8QGg1taIfbBniqpzUXhvjMauNhrbWJQX2n/ucKO9+kafJMgSJeLBMoJD4UB6ioLyB3W8mmwqohbP1bFcJ1r6zT/9MWj2ONTDsrhUQxJMqDPLXIMB2bOG/vLDY+k1JSewv4I6FwFWcBaxdS7kD639It4o52R5c31/04qtlWRgse+kASoV0QljHjZVXyTPnqu+W89cK1eGaAupLanjqEizSft7C7UAO7xaHzO/yZQnVv755X0Mi/18YM5xVAgSD3Xn76CNI+/mDvT0bvVx/qEc9CbF0k2lzFgJ7GpV5KwHJizmpieNxo8ThqhQLHMQWvDftXHrggen59dHcqWovznoBIoCUdSNlwnz2Ojkcv3QBfvF0CJBkOgRIMh0CJJkOAZJMhwBJpkOAJNMhQJL5f7eTF+i9mk6kAAAAAElFTkSuQmCC" alt="Tadween" style="border-radius:0"><span>Tadween</span></div>
+      </div>
+      <p>كطالب في Tawjeh، هيكون ليك Access على منصة Tadween، وتقدر تستفيد من مجموعة من الأدوات اللي هتساعدك تجهز نفسك لسوق العمل وتحوّل اللي اتعلمته لمحتوى احترافي جاهز للتقديم على الوظائف.</p>
+      <div class="flow-chips">
+        <span class="chip">Learn</span><span class="chip-arrow">←</span>
+        <span class="chip">Practice</span><span class="chip-arrow">←</span>
+        <span class="chip">Build</span><span class="chip-arrow">←</span>
+        <span class="chip gold">Career Ready</span>
       </div>
     </div>
+    <div class="cr-grid">
+      <div class="f-card glass reveal"><div class="cr-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></div><h3>CV Builder</h3><p>اعمل CV احترافي ومتوافق مع أنظمة الـ ATS، يساعدك تقدم على الوظائف بشكل أفضل.</p></div>
+      <div class="f-card glass reveal"><div class="cr-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div><h3>Job Profiles</h3><p>أنشئ Job Profile مخصص للوظيفة اللي بتستهدفها، ويعرض مهاراتك وخبراتك بشكل مناسب.</p></div>
+      <div class="f-card glass reveal"><div class="cr-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-8M2 20h20"/></svg></div><h3>Job Fit Analysis</h3><p>اعرف مدى توافق مهاراتك وخبراتك مع الوظيفة، واكتشف المهارات أو النقاط اللي محتاج تطورها.</p></div>
+      <div class="f-card glass reveal"><div class="cr-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></div><h3>AI Mock Interviews</h3><p>تدرّب على Interviews بشكل واقعي باستخدام AI، وحسّن طريقة إجاباتك واستعدادك للانترفيو.</p></div>
+      <div class="f-card glass reveal"><div class="cr-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div><h3>Cover Letters</h3><p>أنشئ Cover Letter مناسب لكل وظيفة بدل ما تستخدم نفس الرسالة لكل التقديمات.</p></div>
+      <div class="f-card glass reveal"><div class="cr-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 14h8"/></svg></div><h3>Personal / Portfolio Page</h3><p>اعمل صفحة احترافية تجمع مشاريعك ومهاراتك وخبراتك وتقدر تشاركها مع الـ Recruiters.</p></div>
+      <div class="f-card glass reveal"><div class="cr-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11M4 6l1 1 2-2M4 12l1 1 2-2M4 18l1 1 2-2"/></svg></div><h3>Job Tracking</h3><p>تابع الوظائف اللي قدمت عليها، وحالة كل Application، والخطوات اللي محتاج تعملها بعد كده.</p></div>
+    </div>
+  </div>
+</section>
+<section id="pricing">
+  <div class="wrap">
+    <div class="section-head reveal"><div class="eyebrow">Pricing</div><h2>Pricing & Offers</h2><p>الهدف من Tawjeh ليس ربحيًا والـFee المطلوبة هدفها ضمان جدية والتزام المشاركين بالإضافة إلى تغطية تكاليف تشغيل الـRound.</p></div>
+    <div class="price-main reveal">
+      <span class="price-pill">رسوم الاشتراك في الـRound</span>
+      <div class="price-amount"><b>1500</b><span>EGP</span></div>
+      <div class="price-usd"><b>$30</b><span>USD</span></div>
+      <p class="price-note">دفعة واحدة للـRound كامل — الهدف ضمان الجدية وتغطية تكاليف التشغيل.</p>
+      <a href="https://forms.gle/2Ui9fqWfUR8MWw2a8" target="_blank" rel="noopener" class="btn btn-primary">Apply Now</a>
+    </div>
+    <div class="offer-grid">
+      <div class="offer-card reveal"><span class="offer-badge">50% OFF</span><h3>Bring a Friend</h3><p>لو عضو حالي في Tawjeh جاب شخص من خارج Tawjeh واشترك في الـRound، الاتنين يدفعوا 50% من قيمة الاشتراك.</p><div class="offer-price"><s>1500</s><b>750</b><small>EGP</small></div><div class="offer-usd"><s>$30</s><b>$15</b><small>USD</small></div></div>
+      <div class="offer-card reveal"><span class="offer-badge">50% OFF</span><h3>Bring 3 Friends</h3><p>لو جبت 3 أشخاص جدد واشتركوا ودفعوا، تحصل على خصم 50% على اشتراكك، وهما يحصلوا على خصم 20%.</p><div class="offer-sub">الأصدقاء: 1500 ← 1200 EGP (خصم 20%)<div class="sub-usd"><span class="ltr">$30</span> ← <span class="ltr">$25</span> <span class="ltr">USD</span></div></div><div class="offer-price"><s>1500</s><b>750</b><small>EGP</small></div><div class="offer-usd"><s>$30</s><b>$15</b><small>USD</small></div></div>
+      <div class="offer-card reveal"><span class="offer-badge">FREE</span><h3>Gaza Support</h3><p>المشاركون من غزة معفيين من رسوم الاشتراك. يتم احتساب الـReferral بعد إتمام التسجيل والدفع.</p><div class="offer-price"><s>1500</s><span class="free">مجانًا</span></div></div>
+    </div>
+  </div>
+</section>
+<section id="who">
+  <div class="wrap">
     <div class="who-grid">
       <div class="reveal">
         <h3 style="margin-bottom:16px;font-size:18px">Who Can Join?</h3>
@@ -564,32 +599,6 @@ footer{padding:60px 0 30px;border-top:1px solid var(--border)}
     </div>
   </div>
 </section>
-
-<section id="pricing">
-  <div class="wrap">
-    <div class="section-head reveal"><div class="eyebrow">Pricing</div><h2>Pricing & Offers</h2><p>الهدف من Tawjeh ليس ربحيًا والـFee المطلوبة هدفها ضمان جدية والتزام المشاركين بالإضافة إلى تغطية تكاليف تشغيل الـRound.</p></div>
-    <div class="price-main reveal">
-      <span class="price-pill">رسوم الاشتراك في الـRound</span>
-      <div class="price-amount"><b>1500</b><span>EGP</span></div>
-      <div class="price-usd"><b>$30</b><span>USD</span></div>
-      <p class="price-note">دفعة واحدة للـRound كامل — الهدف ضمان الجدية وتغطية تكاليف التشغيل.</p>
-      <a href="https://forms.gle/2Ui9fqWfUR8MWw2a8" target="_blank" rel="noopener" class="btn btn-primary">Apply Now</a>
-    </div>
-    <div class="offer-grid">
-      <div class="offer-card reveal"><span class="offer-badge">50% OFF</span><h3>Bring a Friend</h3><p>لو عضو حالي في Tawjeh جاب شخص من خارج Tawjeh واشترك في الـRound، الاتنين يدفعوا 50% من قيمة الاشتراك.</p><div class="offer-price"><s>1500</s><b>750</b><small>EGP</small></div><div class="offer-usd"><s>$30</s><b>$15</b><small>USD</small></div></div>
-      <div class="offer-card reveal"><span class="offer-badge">50% OFF</span><h3>Bring 3 Friends</h3><p>لو جبت 3 أشخاص جدد واشتركوا ودفعوا، تحصل على خصم 50% على اشتراكك، وهما يحصلوا على خصم 20%.</p><div class="offer-sub">الأصدقاء: 1500 ← 1200 EGP (خصم 20%)<div class="sub-usd"><span class="ltr">$30</span> ← <span class="ltr">$25</span> <span class="ltr">USD</span></div></div><div class="offer-price"><s>1500</s><b>750</b><small>EGP</small></div><div class="offer-usd"><s>$30</s><b>$15</b><small>USD</small></div></div>
-      <div class="offer-card reveal"><span class="offer-badge">FREE</span><h3>Gaza Support</h3><p>المشاركون من غزة معفيين من رسوم الاشتراك. يتم احتساب الـReferral بعد إتمام التسجيل والدفع.</p><div class="offer-price"><s>1500</s><span class="free">مجانًا</span></div></div>
-    </div>
-  </div>
-</section>
-
-<section id="faq">
-  <div class="wrap" style="max-width:820px">
-    <div class="section-head reveal"><div class="eyebrow">FAQ</div><h2>FAQ</h2></div>
-    <div id="faqList"></div>
-  </div>
-</section>
-
 <section id="steps">
   <div class="wrap">
     <div class="section-head reveal"><div class="eyebrow">How to Apply</div><h2>خطوات التسجيل</h2></div>
@@ -601,17 +610,27 @@ footer{padding:60px 0 30px;border-top:1px solid var(--border)}
     </div>
   </div>
 </section>
-
 <section>
   <div class="wrap">
     <div class="final-cta glass reveal">
       <div class="eyebrow" style="justify-content:center">Get Started</div>
-      <h2>Ready to Start Your Journey?</h2>
+      <h2 dir="ltr">Ready to Start Your Journey?</h2>
       <div class="hero-cta"><a href="https://forms.gle/2Ui9fqWfUR8MWw2a8" target="_blank" rel="noopener" class="btn btn-primary">Apply Now</a></div>
     </div>
   </div>
 </section>
-
+<section id="reviews">
+  <div class="wrap">
+    <div class="section-head reveal"><div class="eyebrow">Reviews</div><h2>Student Reviews</h2></div>
+    <div class="t-scroll reveal" id="testGrid"></div>
+  </div>
+</section>
+<section id="projects">
+  <div class="wrap">
+    <div class="section-head reveal"><div class="eyebrow">Projects</div><h2>Student Projects</h2></div>
+    <div class="p-grid p-row reveal" id="projectsGrid"></div>
+  </div>
+</section>
 <section id="platform">
   <div class="wrap">
     <div class="section-head reveal"><div class="eyebrow">Platform</div><h2>Take a look at Tawjeh Platform</h2></div>
@@ -620,6 +639,12 @@ footer{padding:60px 0 30px;border-top:1px solid var(--border)}
       <div class="browser-mock glass reveal" style="transition-delay:.1s"><div class="browser-top"><span></span><span></span><span></span></div><img data-shot="shotBack" alt="Tawjeh Platform Dashboard"></div>
     </div>
     <div style="margin-top:28px" class="reveal"><a href="https://tawjeh.net" target="_blank" rel="noopener" class="btn btn-primary">Tawjeh.net</a></div>
+  </div>
+</section>
+<section id="faq">
+  <div class="wrap" style="max-width:820px">
+    <div class="section-head reveal"><div class="eyebrow">FAQ</div><h2>FAQ</h2></div>
+    <div id="faqList"></div>
   </div>
 </section>
 <footer>
@@ -632,8 +657,8 @@ footer{padding:60px 0 30px;border-top:1px solid var(--border)}
       <a href="https://tawjeh.net" target="_blank" rel="noopener" style="color:var(--gold-2);font-weight:700">tawjeh.net</a>
     </div>
     <ul class="footer-links">
-      <li><a href="#about">About</a></li><li><a href="#levels">Levels</a></li><li><a href="#mentoring">Mentoring</a></li>
-      <li><a href="#projects">Projects</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#faq">FAQ</a></li>
+      <li><a href="#about">About</a></li><li><a href="#mentoring">Mentoring</a></li><li><a href="#levels">Levels</a></li>
+      <li><a href="#pricing">Pricing</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#projects">Projects</a></li><li><a href="#faq">FAQ</a></li>
       <li><a href="https://forms.gle/2Ui9fqWfUR8MWw2a8" target="_blank" rel="noopener">Apply</a></li><li><a href="#platform">Platform</a></li>
     </ul>
     <div class="footer-bottom"><span>© 2026 Tawjeh Academy</span><span>Cairo, Egypt</span></div>
