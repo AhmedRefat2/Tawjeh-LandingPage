@@ -301,8 +301,8 @@ footer{padding:60px 0 30px;border-top:1px solid var(--border)}
 .p-grid.p-row .p-card{flex:0 0 340px;max-width:85%;scroll-snap-align:start}
 
 /* Career Ready (Tawjeh x Tadween) */
-.cr-lockup{display:inline-flex;align-items:center;gap:18px;padding:14px 24px;margin:6px 0 22px;direction:ltr}
-.cr-brand{display:flex;align-items:center;gap:12px;font-size:18px;font-weight:700;color:var(--ink)}
+.cr-lockup{display:flex;width:fit-content;max-width:100%;align-items:center;justify-content:center;gap:18px;padding:14px 24px;margin:6px 0 22px;direction:ltr}
+.cr-brand{flex:none;display:flex;align-items:center;gap:12px;font-size:18px;font-weight:700;color:var(--ink)}
 .cr-brand img{width:44px;height:44px;border-radius:12px;display:block}
 .cr-x{color:var(--gold-2);font-size:22px;font-weight:700}
 .cr-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
@@ -311,9 +311,29 @@ footer{padding:60px 0 30px;border-top:1px solid var(--border)}
 .cr-grid .f-card p{font-size:14px}
 .cr-ic{width:38px;height:38px;border-radius:10px;background:rgba(220,158,31,.15);color:var(--gold-2);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
 .cr-ic svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:520px){.cr-flow{gap:4px;flex-wrap:nowrap}.cr-flow .chip{padding:6px 8px;font-size:11.5px;white-space:nowrap}.cr-flow .chip-arrow{font-size:12px}.cr-lockup{gap:14px;padding:12px 18px}.cr-brand{font-size:16px;gap:10px}}
 @media(max-width:900px){
   .cr-grid{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:14px;-webkit-overflow-scrolling:touch}
   .cr-grid .f-card,.cr-grid .f-card:nth-child(n+5){flex:0 0 280px;max-width:80%;scroll-snap-align:start}
+}
+
+/* LEVELS SEQUENCE (stairs, echoing the Tawjeh arrow mark) */
+.levels.seq{align-items:start;gap:44px}
+.levels.seq .level-card{position:relative;min-height:190px;cursor:default}
+.levels.seq .level-card:nth-child(1){margin-top:168px}
+.levels.seq .level-card:nth-child(2){margin-top:112px}
+.levels.seq .level-card:nth-child(3){margin-top:56px}
+.levels.seq .level-card:not(:last-child)::after{content:'';position:absolute;left:-44px;width:44px;height:56px;top:calc(50% - 56px);background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 56' fill='none' stroke='%23F3C463' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M44 56H31Q22 56 22 47V9Q22 0 13 0H0'/%3E%3C/svg%3E") no-repeat center/100% 100%;filter:drop-shadow(0 0 6px rgba(220,158,31,.6))}
+.levels.seq .level-card:last-child{border-color:rgba(220,158,31,.4)}
+.lv-arrow{position:absolute;top:20px;left:20px;width:34px;height:34px;transform:scaleX(-1);filter:drop-shadow(0 0 10px rgba(220,158,31,.55))}
+.levels.seq .level-card h3,.levels.outcomes .level-card h3{direction:ltr;unicode-bidi:isolate;text-align:right}
+.levels.outcomes .level-card{cursor:default}
+.levels.outcomes .level-card.featured{border-color:rgba(220,158,31,.4);background:linear-gradient(180deg,rgba(220,158,31,.08),var(--glass))}
+.levels.outcomes .hl{color:inherit;font-weight:700}
+@media(max-width:900px){
+  .levels.seq{gap:34px}
+  .levels.seq .level-card{margin-top:0!important;min-height:0}
+  .levels.seq .level-card:not(:last-child)::after{left:50%;top:100%;width:2.5px;height:34px;background:linear-gradient(var(--gold),var(--gold-2));transform:translateX(-50%);border-radius:2px}
 }
 </style>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23070D1B'/><g transform='translate(9 10) scale(.98)'><polygon points='1,17 55,17 39.5,32.6 39.5,82 26,82 26,32.6 1,32.6' fill='%23fff'/><polygon points='47,0.9 82.75,0.9 82.75,34.9 73.1,34.9 73.1,17.1 52.9,37.1 52.9,81.9 42.25,81.9 42.25,34.6 66.25,10.4 47,10.4' fill='%23DC9E1F'/></g></svg>">
@@ -394,7 +414,7 @@ footer{padding:60px 0 30px;border-top:1px solid var(--border)}
   <div class="wrap">
     <div class="round-banner glass reveal">
       <div class="eyebrow" style="justify-content:center">Round 2</div>
-      <div class="round-dates">Starts: 20 October — Ends: 20 January</div>
+      <div class="round-dates">Starts: 30 October — Ends: 30 January</div>
       <p style="margin-top:10px">Duration: 3 Months. Each Round is designed to complete one full Level.</p>
       <div class="countdown">
         <div class="cd-box"><div class="cd-num" id="cd-d">--</div><div class="cd-label">Days</div></div>
@@ -509,26 +529,22 @@ footer{padding:60px 0 30px;border-top:1px solid var(--border)}
 <section id="levels">
   <div class="wrap">
     <div class="section-head reveal"><div class="eyebrow">Levels</div><h2>Levels</h2></div>
-    <div class="levels">
-      <div class="level-card glass reveal"><div class="lv">00</div><h3>Fundamentals</h3><div class="chips-row" style="margin:0 0 12px"><span class="chip">C#</span><span class="chip">OOP</span><span class="chip">Databases</span></div><p>Practical exercises and tasks to build a strong foundation.</p></div>
-      <div class="level-card glass reveal"><div class="lv">01</div><h3>.NET Foundations</h3><p>في المستوى ده هتكون نفذت مجموعة من الـProjects بإيدك، وطبقت أساسيات الـ.NET Backend والـAdvanced C# والـDatabases بشكل عملي، وبنيت خبرة حقيقية في التعامل مع الـProjects.</p></div>
-      <div class="level-card glass reveal"><div class="lv">02</div><h3>Real-World Projects</h3><p>هتشتغل على 2 Large Scale Projects وتطبق مفاهيم الـBackend Development والـArchitecture بشكل أقرب لبيئة الـReal-World Projects.</p></div>
-      <div class="level-card glass reveal"><div class="lv">03</div><h3>Open Source & Advanced GitHub</h3><p>هتكتسب تجربة فعلية في الـOpen Source وتطور مهاراتك في Git وGitHub والـCollaboration وتشارك في Real Projects.</p></div>
+    <div class="levels seq">
+      <div class="level-card glass reveal"><div class="lv">00</div><h3>Fundamentals</h3></div>
+      <div class="level-card glass reveal"><div class="lv">01</div><h3>.NET Foundations</h3></div>
+      <div class="level-card glass reveal"><div class="lv">02</div><h3>Real-World Projects</h3></div>
+      <div class="level-card glass reveal"><div class="lv">03</div><h3>Open Source &amp; Advanced GitHub</h3><svg class="lv-arrow" viewBox="0 0 84 83" aria-hidden="true"><polygon points="47,0.9 82.75,0.9 82.75,34.9 73.1,34.9 73.1,17.1 52.9,37.1 42.25,34.6 66.25,10.4 47,10.4" fill="#DC9E1F" stroke="#DC9E1F" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
     </div>
   </div>
 </section>
-<section id="practice">
+<section id="outcomes">
   <div class="wrap">
-    <div class="section-head reveal"><div class="eyebrow">Practical Experience</div><h2>Practical Experience</h2><p>في Tawjeh التطبيق جزء أساسي من الرحلة. هتشتغل على مجموعة من الـProjects وتطبق اللي بتتعلمه بشكل عملي.</p></div>
-    <div class="checklist reveal">
-      <div class="check-item"><span class="dotm">✓</span>هتكتسب Practical .NET Backend Experience.</div>
-      <div class="check-item"><span class="dotm">✓</span>هتطبق Backend Development وArchitecture.</div>
-      <div class="check-item"><span class="dotm">✓</span>هتتعلم Git & GitHub وتشارك في Open Source في المستويات المتقدمة.</div>
-      <div class="check-item"><span class="dotm">✓</span>هتتدرب على Live Coding وProject Explanation.</div>
-      <div class="check-item"><span class="dotm">✓</span>هتحصل على Detailed Feedback بشكل مستمر.</div>
-      <div class="check-item"><span class="dotm">✓</span>هتكون جزء من Community وتبني علاقات مع Developers.</div>
-      <div class="check-item"><span class="dotm">✓</span>هتتابع تقدمك بشكل واضح وتنتقل من Level للـLevel اللي بعده.</div>
-      <div class="check-item"><span class="dotm">✓</span>وهتجمع Points مقابل الـProgress والإنجازات خلال الرحلة.</div>
+    <div class="section-head reveal"><div class="eyebrow">Outcomes</div><h2>هتطلع بإيه من كل Level؟</h2></div>
+    <div class="levels outcomes">
+      <div class="level-card glass reveal"><div class="lv">00</div><h3>Fundamentals</h3><p>هتبني أساس قوي في C#, OOP وDatabases، وتفهم الـ Core concepts اللي محتاجها عشان تبدأ تبني Applications.</p></div>
+      <div class="level-card glass reveal"><div class="lv">01</div><h3>.NET Foundations</h3><p>هتحوّل أساسياتك إلى Real .NET Applications من خلال LINQ, EF Core وASP.NET Core Web APIs مع Hands-on Projects.</p></div>
+      <div class="level-card glass reveal"><div class="lv">02</div><h3>Real-World Projects</h3><p>هتبني Real-World .NET Projects وتتعلم Modern Architecture, Security, Integrations وProduction Practices، عشان تكون أقرب للـ Job-Ready.</p></div>
+      <div class="level-card glass reveal featured"><div class="lv">03</div><h3>Open Source &amp; Advanced GitHub</h3><p><b class="hl">هتشارك في Open Source Projects وهتشتغل مع تيم</b>، وتشتغل بطريقة الـ Professional Developer من خلال Git &amp; GitHub, Clean Code, Unit Testing, APIs وProblem Solving.</p></div>
     </div>
   </div>
 </section>
@@ -542,8 +558,8 @@ footer{padding:60px 0 30px;border-top:1px solid var(--border)}
         <span class="cr-x">×</span>
         <div class="cr-brand"><img src="data:image/png;base64,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" alt="Tadween" style="border-radius:0"><span>Tadween</span></div>
       </div>
-      <p>كطالب في Tawjeh، هيكون ليك Access على منصة Tadween، وتقدر تستفيد من مجموعة من الأدوات اللي هتساعدك تجهز نفسك لسوق العمل وتحوّل اللي اتعلمته لمحتوى احترافي جاهز للتقديم على الوظائف.</p>
-      <div class="flow-chips">
+      <p>الطلبة المتميزين معانا هيكون ليهم Access على منصة Tadween، ويقدروا يستفيدوا من مجموعة من الأدوات اللي هتساعدهم يجهزوا نفسهم لسوق العمل ويحوّلوا اللي اتعلموه لمحتوى احترافي جاهز للتقديم على الوظائف.</p>
+      <div class="flow-chips cr-flow">
         <span class="chip">Learn</span><span class="chip-arrow">←</span>
         <span class="chip">Practice</span><span class="chip-arrow">←</span>
         <span class="chip">Build</span><span class="chip-arrow">←</span>
@@ -561,6 +577,11 @@ footer{padding:60px 0 30px;border-top:1px solid var(--border)}
     </div>
   </div>
 </section>
+<section id="internships">
+  <div class="wrap">
+    <div class="section-head reveal"><div class="eyebrow">Paid Internships</div><h2>Paid Internships</h2><p>الـTop Students بيكون عندهم فرص للترشح لـPaid Internships من خلال الشركات الشريكة حسب الفرص المتاحة ومتطلبات كل شركة.</p></div>
+  </div>
+</section>
 <section id="pricing">
   <div class="wrap">
     <div class="section-head reveal"><div class="eyebrow">Pricing</div><h2>Pricing & Offers</h2><p>الهدف من Tawjeh ليس ربحيًا والـFee المطلوبة هدفها ضمان جدية والتزام المشاركين بالإضافة إلى تغطية تكاليف تشغيل الـRound.</p></div>
@@ -574,7 +595,7 @@ footer{padding:60px 0 30px;border-top:1px solid var(--border)}
     <div class="offer-grid">
       <div class="offer-card reveal"><span class="offer-badge">50% OFF</span><h3>Bring a Friend</h3><p>لو عضو حالي في Tawjeh جاب شخص من خارج Tawjeh واشترك في الـRound، الاتنين يدفعوا 50% من قيمة الاشتراك.</p><div class="offer-price"><s>1500</s><b>750</b><small>EGP</small></div><div class="offer-usd"><s>$30</s><b>$15</b><small>USD</small></div></div>
       <div class="offer-card reveal"><span class="offer-badge">50% OFF</span><h3>Bring 3 Friends</h3><p>لو جبت 3 أشخاص جدد واشتركوا ودفعوا، تحصل على خصم 50% على اشتراكك، وهما يحصلوا على خصم 20%.</p><div class="offer-sub">الأصدقاء: 1500 ← 1200 EGP (خصم 20%)<div class="sub-usd"><span class="ltr">$30</span> ← <span class="ltr">$25</span> <span class="ltr">USD</span></div></div><div class="offer-price"><s>1500</s><b>750</b><small>EGP</small></div><div class="offer-usd"><s>$30</s><b>$15</b><small>USD</small></div></div>
-      <div class="offer-card reveal"><span class="offer-badge">FREE</span><h3>Gaza Support</h3><p>المشاركون من غزة معفيين من رسوم الاشتراك. يتم احتساب الـReferral بعد إتمام التسجيل والدفع.</p><div class="offer-price"><s>1500</s><span class="free">مجانًا</span></div></div>
+      <div class="offer-card reveal"><span class="offer-badge">FREE</span><h3>Gaza Support</h3><p>المشاركون من غزة معفيين من رسوم الاشتراك.</p><div class="offer-price"><s>1500</s><span class="free">مجانًا</span></div></div>
     </div>
   </div>
 </section>
@@ -661,7 +682,7 @@ footer{padding:60px 0 30px;border-top:1px solid var(--border)}
       <li><a href="#pricing">Pricing</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#projects">Projects</a></li><li><a href="#faq">FAQ</a></li>
       <li><a href="https://forms.gle/2Ui9fqWfUR8MWw2a8" target="_blank" rel="noopener">Apply</a></li><li><a href="#platform">Platform</a></li>
     </ul>
-    <div class="footer-bottom"><span>© 2026 Tawjeh Academy</span><span>Cairo, Egypt</span></div>
+    <div class="footer-bottom"><span>© 2026 Tawjeh Academy</span><span>Online</span></div>
   </div>
 </footer><script>
 const header = document.getElementById('siteHeader');
@@ -844,7 +865,7 @@ const tlio = new IntersectionObserver(es=>{
 tlio.observe(tlWrap);
 
 function updateCountdown(){
-  let diff = new Date('2026-10-20T00:00:00') - new Date(); if(diff<0) diff=0;
+  let diff = new Date('2026-10-30T00:00:00') - new Date(); if(diff<0) diff=0;
   document.getElementById('cd-d').textContent = Math.floor(diff/86400000);
   document.getElementById('cd-h').textContent = String(Math.floor(diff%86400000/3600000)).padStart(2,'0');
   document.getElementById('cd-m').textContent = String(Math.floor(diff%3600000/60000)).padStart(2,'0');
