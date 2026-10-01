@@ -1,0 +1,27 @@
+{
+  "name": "primary",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "esbuild analytics.js --bundle --minify --outfile=dist/analytics.js",
+    "test": "echo \"No tests specified\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AhmedRefat2/Tawjeh-LandingPage.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AhmedRefat2/Tawjeh-LandingPage/issues"
+  },
+  "homepage": "https://github.com/AhmedRefat2/Tawjeh-LandingPage#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  }
+}
