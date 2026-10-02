@@ -16,14 +16,14 @@ body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
-section{padding:110px 0;position:relative}
+section{padding:72px 0;position:relative}
 h1,h2,h3{margin:0;font-weight:700;letter-spacing:-.01em}
-h2{font-size:clamp(28px,4vw,44px)}
+h2{font-size:clamp(26px,3.5vw,38px)}
 p{margin:0;color:var(--muted);font-weight:500}
 .grad{background:linear-gradient(90deg,var(--gold-2),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;letter-spacing:.06em;color:var(--gold-2);text-transform:uppercase;margin-bottom:16px}
 .eyebrow::before{content:'';width:22px;height:1px;background:var(--gold)}
-.section-head{max-width:640px;margin-bottom:52px}
+.section-head{max-width:640px;margin-bottom:44px}
 .section-head p{margin-top:14px;font-size:17.5px}
 .btn{display:inline-flex;align-items:center;gap:10px;padding:15px 30px;border-radius:100px;font-weight:700;font-size:15px;cursor:pointer;border:none;position:relative;overflow:hidden;transition:transform .3s cubic-bezier(.2,.8,.2,1)}
 .btn-primary{background:linear-gradient(135deg,var(--gold),var(--gold-2));color:#241703;box-shadow:0 16px 40px -14px rgba(220,158,31,.6)}
@@ -36,9 +36,9 @@ p{margin:0;color:var(--muted);font-weight:500}
 .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
 .reveal.in{opacity:1;transform:none}
 /* NAV */
-header{position:fixed;top:0;insetInlineStart:0;insetInlineEnd:0;z-index:100;padding:18px 24px;transition:padding .3s}
+header{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 24px;transition:padding .3s}
 header.solid{padding:12px 24px}
-nav{display:flex;align-items:center;justify-content:center;gap:36px;max-width:fit-content;margin:0 auto;padding:10px 22px;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:100px;backdrop-filter:blur(14px);box-shadow:0 10px 30px -14px rgba(0,0,0,.5);transition:background .3s,box-shadow .3s}
+nav{display:flex;align-items:center;justify-content:center;gap:36px;width:fit-content;max-width:100%;margin:0 auto;padding:10px 22px;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:100px;backdrop-filter:blur(14px);box-shadow:0 10px 30px -14px rgba(0,0,0,.5);transition:background .3s,box-shadow .3s}
 header.solid nav{background:rgba(7,13,27,.85);box-shadow:0 14px 34px -14px rgba(0,0,0,.6)}
 .brand{flex-shrink:0}
 .brand{display:flex;align-items:center;gap:9px}
@@ -48,6 +48,7 @@ header.solid nav{background:rgba(7,13,27,.85);box-shadow:0 14px 34px -14px rgba(
 .nav-links a{opacity:.85}
 .nav-links a:hover{opacity:1;color:var(--gold-2)}
 .nav-actions{display:flex;align-items:center;gap:14px;flex-shrink:0}
+.nav-actions .nav-cta{padding:10px 22px;font-size:13.5px;white-space:nowrap}
 .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
 .burger span{width:22px;height:2px;background:var(--ink)}
 .mobile-menu{display:none;position:fixed;inset:64px 0 auto 0;background:var(--bg2);border-bottom:1px solid var(--border);padding:24px;flex-direction:column;gap:20px;font-weight:600;z-index:99}
@@ -67,7 +68,7 @@ header.solid nav{background:rgba(7,13,27,.85);box-shadow:0 14px 34px -14px rgba(
 .hero{padding:170px 0 60px}
 .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
 .eyebrow-logo{width:46px;height:46px;margin-bottom:22px;display:block;filter:drop-shadow(0 0 16px rgba(220,158,31,.5))}
-.hero h1{font-size:clamp(36px,5.4vw,62px);line-height:1.18}
+.hero h1{font-size:clamp(32px,4.8vw,54px);line-height:1.18}
 .hero .en{display:block;font-size:.4em;font-weight:700;color:var(--gold-2);letter-spacing:.01em;margin-bottom:12px}
 .hero p.lead{margin-top:24px;font-size:19px;max-width:540px}
 .hero-cta{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
@@ -101,13 +102,13 @@ header.solid nav{background:rgba(7,13,27,.85);box-shadow:0 14px 34px -14px rgba(
 /* STATS */
 .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-radius:22px;overflow:hidden;border:1px solid var(--border)}
 .stat-cell{background:var(--bg2);padding:44px 24px;text-align:center}
-.stat-num{font-size:clamp(30px,4.6vw,50px);font-weight:700}
+.stat-num{font-size:clamp(28px,4vw,44px);font-weight:700}
 .stat-label{margin-top:8px;font-size:14px;color:var(--muted)}
 /* WHY - numbered editorial list */
 .why-list{display:flex;flex-direction:column}
 .why-item{display:flex;align-items:flex-start;gap:28px;padding:30px 0;border-top:1px solid var(--border)}
 .why-item:last-child{border-bottom:1px solid var(--border)}
-.why-num{font-size:44px;font-weight:700;color:transparent;-webkit-text-stroke:1.5px rgba(220,158,31,.5);flex-shrink:0;width:70px}
+.why-num{font-size:38px;font-weight:700;color:transparent;-webkit-text-stroke:1.5px rgba(220,158,31,.5);flex-shrink:0;width:70px}
 .why-item p{font-size:16.5px;color:var(--ink);font-weight:500}
 /* TIMELINE horizontal */
 .timeline-h{display:flex;justify-content:space-between;position:relative;padding-top:10px}
@@ -121,7 +122,7 @@ header.solid nav{background:rgba(7,13,27,.85);box-shadow:0 14px 34px -14px rgba(
 .levels{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
 .level-card{padding:28px;cursor:pointer;transition:transform .3s,border-color .3s}
 .level-card:hover{transform:translateY(-6px);border-color:rgba(220,158,31,.4)}
-.level-card .lv{font-size:38px;font-weight:700;color:var(--gold-2)}
+.level-card .lv{font-size:34px;font-weight:700;color:var(--gold-2)}
 .level-card h3{font-size:17px;margin:10px 0 12px}
 .level-card p{font-size:14.5px}
 /* MENTOR split */
@@ -163,7 +164,7 @@ header.solid nav{background:rgba(7,13,27,.85);box-shadow:0 14px 34px -14px rgba(
 .t-card{scroll-snap-align:start;min-width:300px;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:14px;font-weight:600}
 /* ROUND / countdown */
 .round-banner{padding:56px 40px;text-align:center;background:linear-gradient(135deg,rgba(220,158,31,.12),rgba(255,255,255,.02))}
-.round-dates{font-size:clamp(26px,4vw,42px);font-weight:700;color:var(--gold-2)}
+.round-dates{font-size:clamp(24px,3.5vw,36px);font-weight:700;color:var(--gold-2)}
 .countdown{display:flex;justify-content:center;gap:18px;margin-top:30px;flex-wrap:wrap}
 .cd-box{min-width:84px;padding:16px 10px;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:14px}
 .cd-num{font-size:28px;font-weight:700;color:var(--ink)}
@@ -176,7 +177,7 @@ header.solid nav{background:rgba(7,13,27,.85);box-shadow:0 14px 34px -14px rgba(
 .price-main::before,.offer-card::before{content:"";position:absolute;top:0;inset-inline:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--gold-2))}
 .price-pill{display:inline-block;background:rgba(243,196,99,.12);border:1px solid rgba(243,196,99,.3);color:var(--gold-2);font-size:12.5px;font-weight:800;padding:8px 18px;border-radius:100px}
 .price-amount{display:flex;align-items:baseline;justify-content:center;gap:10px;margin:18px 0 8px;direction:ltr}
-.price-amount b{font-size:84px;line-height:1;font-weight:900;color:var(--ink);letter-spacing:-2px}
+.price-amount b{font-size:72px;line-height:1;font-weight:900;color:var(--ink);letter-spacing:-2px}
 .price-amount span{font-size:20px;font-weight:800;color:var(--gold-2)}
 .price-note{font-size:14px;line-height:1.9;color:var(--muted);margin-bottom:24px}
 .price-main .btn{width:100%;justify-content:center;padding:19px 30px;font-size:16px}
@@ -232,13 +233,26 @@ footer{padding:60px 0 30px;border-top:1px solid var(--border)}
 .footer-links{display:flex;gap:24px;flex-wrap:wrap;list-style:none;padding:0;margin:24px 0;font-size:14px;font-weight:600;color:var(--muted)}
 .footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:13px;color:var(--muted);padding-top:20px}
 @media (max-width:1080px){
+  nav{gap:18px;padding:9px 16px}
+  .nav-links{gap:14px;font-size:13px}
+  .nav-actions .btn{padding:11px 18px;font-size:13px}
+}
+@media (min-width:761px) and (max-width:900px){
+  header,header.solid{padding-left:12px;padding-right:12px}
+  nav{gap:12px;padding:8px 12px;width:100%;justify-content:space-between}
+  .nav-links{gap:9px;font-size:12px}
+  .brand{gap:6px}.brand-word{font-size:16px}.brand-mark{width:26px;height:26px}
+  .nav-actions .btn{padding:9px 12px;font-size:12px;white-space:nowrap}
+}
+@media (max-width:760px){
   .nav-links{display:none}
   .burger{display:flex}
 }
+@media (min-width:761px){.mobile-menu{display:none!important}}
 @media (max-width:900px){
   .hero-grid,.stats-grid,.p-grid,.levels,.who-grid,.offer-grid,.mentor-grid{grid-template-columns:1fr}
   .checklist{grid-template-columns:1fr}
-  section{padding:76px 0}
+  section{padding:52px 0}
   .hero{padding:150px 0 40px}
   .timeline-h{flex-direction:column;gap:28px}
   .timeline-h::before,.timeline-h .line-fill{display:none}
@@ -317,6 +331,52 @@ footer{padding:60px 0 30px;border-top:1px solid var(--border)}
   .cr-grid .f-card,.cr-grid .f-card:nth-child(n+5){flex:0 0 280px;max-width:80%;scroll-snap-align:start}
 }
 
+
+/* Problems: one-at-a-time slider */
+.prob-slider{display:flex;align-items:center;gap:14px;max-width:820px;margin:0 auto}
+.prob-stage{flex:1;display:grid;min-width:0}
+.prob-stage .prob{grid-area:1/1;align-items:center;min-height:96px;padding:26px 30px;font-size:clamp(16px,2.2vw,19px);opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .35s,transform .35s,visibility .35s}
+.prob-stage .prob::before{margin-top:0}
+.prob-stage .prob.active{opacity:1;visibility:visible;transform:none}
+.prob-nav{flex:none;width:44px;height:44px;border-radius:50%;border:1.5px solid var(--border);background:rgba(255,255,255,.04);color:var(--gold-2);font-size:20px;line-height:1;cursor:pointer;transition:.25s}
+.prob-nav:hover{border-color:var(--gold-2);background:rgba(255,255,255,.08)}
+.prob-dots{display:flex;justify-content:center;gap:8px;margin-top:22px}
+.prob-dots button{width:8px;height:8px;padding:0;border-radius:100px;border:none;background:rgba(255,255,255,.18);cursor:pointer;transition:width .3s,background .3s}
+.prob-dots button.on{width:24px;background:var(--gold)}
+@media(max-width:600px){.prob-slider{gap:8px}.prob-nav{width:36px;height:36px;font-size:17px}.prob-stage .prob{padding:20px 18px;min-height:110px}}
+/* Partnership: single horizontal scroll row */
+.cr-grid,.cr-grid{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:14px;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:rgba(220,158,31,.5) transparent}
+.cr-grid .f-card,.cr-grid .f-card:nth-child(n+5){flex:0 0 300px;max-width:85%;grid-column:auto;scroll-snap-align:start}
+/* Why Tawjeh: compact 4-column layout */
+#why .f-grid{grid-template-columns:repeat(4,1fr);gap:16px}
+#why .f-card{padding:20px 20px 18px}
+#why .f-card h3{font-size:16px;margin-bottom:8px;line-height:1.45}
+#why .f-card p{font-size:14px;line-height:1.8}
+#why .f-card p+p{margin-top:6px}
+#why .f-card:last-child{grid-column:1/-1}
+@media(max-width:1100px){#why .f-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:700px){#why .f-grid{grid-template-columns:1fr}#why .f-card:last-child{grid-column:auto}}
+/* Hero journey flow (v3: same chain, snake direction) */
+.journey{margin-top:28px;display:flex;flex-direction:column;gap:8px;max-width:540px}
+.jr-row{display:grid;grid-template-columns:1fr 22px 1fr 22px 1fr;align-items:center;column-gap:8px}
+.jr-row.four{grid-template-columns:1fr 22px 1fr 22px 1fr 22px 1fr}
+.jr-row.ltr{direction:ltr}
+.jr-row .chip{display:flex;align-items:center;justify-content:center;text-align:center;min-height:42px;padding:8px 10px;white-space:nowrap;direction:ltr}
+.jr-row .chip-arrow,.jr-down span{display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:17px;line-height:1;font-weight:700}
+.jr-row.ltr .chip-arrow{transform:scaleX(-1)}
+.jr-down{display:grid;grid-template-columns:1fr 22px 1fr 22px 1fr;column-gap:8px;height:22px}
+.jr-down span{grid-column:5}
+.jr-down.ltr{direction:ltr}
+.jr-levels{margin-top:2px;display:flex;flex-direction:column;gap:12px}
+.jr-up{display:flex;align-items:center;gap:10px;font-size:12.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-2);direction:ltr;justify-content:flex-end}
+.jr-up::after{content:'';flex:1;height:1px;background:linear-gradient(270deg,rgba(220,158,31,.5),transparent);order:-1}
+@media(max-width:480px){.jr-row,.jr-down{column-gap:4px}.jr-row{grid-template-columns:1fr 16px 1fr 16px 1fr}.jr-row.four{grid-template-columns:1fr 16px 1fr 16px 1fr 16px 1fr}.jr-down{grid-template-columns:1fr 16px 1fr 16px 1fr}.jr-row .chip{padding:7px 4px;font-size:12px;white-space:normal;line-height:1.3;min-height:40px}.jr-row .chip-arrow,.jr-down span{font-size:14px}}
+@media(max-width:760px){header,header.solid{padding:12px 14px}nav{width:100%;justify-content:space-between;gap:12px;padding:8px 14px}.nav-actions{min-width:0;flex-shrink:1}.nav-actions .btn{white-space:nowrap}.burger{flex-shrink:0}.nav-actions{gap:10px}.nav-actions .btn{padding:10px 18px;font-size:13px}}
+@media(max-width:420px){nav{gap:8px;padding:8px 10px}.nav-actions .btn{padding:9px 14px;font-size:12.5px}}
+@media(max-width:380px){nav{gap:8px;padding:8px 10px}.brand-word{font-size:16px}.nav-actions{gap:6px}.nav-actions .btn{padding:8px 10px;font-size:11.5px;white-space:nowrap}.brand{gap:6px}.brand-mark{width:26px;height:26px}.burger{padding:4px}.burger span{width:18px}}
+/* tiny phones: keep full "Apply for Round 2" text visible */
+@media(max-width:360px){header,header.solid{padding:10px 8px}nav{gap:6px;padding:6px 8px}.brand{gap:5px}.brand-mark{width:22px;height:22px}.brand-word{font-size:14px}.nav-actions{gap:4px;min-width:0}.nav-actions .btn{padding:7px 9px;font-size:10.5px;letter-spacing:0}.burger{padding:3px}.burger span{width:16px}}
+@media(max-width:320px){.brand-word{font-size:13px}.nav-actions .btn{padding:6px 7px;font-size:10px}.burger span{width:15px}}
 /* LEVELS SEQUENCE (stairs, echoing the Tawjeh arrow mark) */
 .levels.seq{align-items:start;gap:44px}
 .levels.seq .level-card{position:relative;min-height:190px;cursor:default}
@@ -335,6 +395,35 @@ footer{padding:60px 0 30px;border-top:1px solid var(--border)}
   .levels.seq .level-card{margin-top:0!important;min-height:0}
   .levels.seq .level-card:not(:last-child)::after{left:50%;top:100%;width:2.5px;height:34px;background:linear-gradient(var(--gold),var(--gold-2));transform:translateX(-50%);border-radius:2px}
 }
+
+/* OUTCOMES — details modal */
+.levels.outcomes .level-card{display:flex;flex-direction:column}
+.lv-cta{margin-top:auto;align-self:flex-start;padding:0;padding-top:18px;background:none;border:none;font:inherit;font-size:13.5px;font-weight:800;color:var(--gold-2);cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:gap .25s,color .25s}
+.lv-cta span{display:inline-block;transition:transform .25s}
+.lv-cta:hover{gap:12px}.lv-cta:hover span{transform:translateX(-3px)}
+.lv-cta:focus-visible{outline:2px solid var(--gold-2);outline-offset:4px;border-radius:6px}
+.om-overlay{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:24px;background:rgba(4,8,18,.78);backdrop-filter:blur(6px);opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
+.om-overlay.open{opacity:1;visibility:visible}
+.om-panel{position:relative;width:100%;max-width:760px;max-height:min(86vh,100%);display:flex;flex-direction:column;background:var(--bg2);border:1px solid rgba(220,158,31,.35);border-radius:18px;box-shadow:0 40px 90px -30px rgba(0,0,0,.8),0 0 60px -30px rgba(220,158,31,.5);transform:translateY(24px) scale(.97);transition:transform .35s cubic-bezier(.2,.8,.2,1);overflow:hidden}
+.om-panel::before{content:"";position:absolute;top:0;inset-inline:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-2))}
+.om-overlay.open .om-panel{transform:none}
+.om-head{display:flex;align-items:center;gap:14px;padding:26px 28px 18px;border-bottom:1px solid var(--border);flex-shrink:0}
+.om-head .lv{font-size:34px;font-weight:700;color:var(--gold-2);line-height:1}
+.om-head h3{font-size:19px;direction:ltr;unicode-bidi:isolate}
+.om-close{margin-inline-start:auto;width:38px;height:38px;border-radius:50%;border:1.5px solid var(--border);background:rgba(255,255,255,.04);color:var(--ink);font-size:22px;line-height:1;cursor:pointer;flex-shrink:0;transition:.25s}
+.om-close:hover{border-color:var(--gold-2);background:rgba(255,255,255,.08);color:var(--gold-2)}
+.om-body{padding:22px 28px 30px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:rgba(220,158,31,.5) transparent}
+.om-item+.om-item{margin-top:22px;padding-top:22px;border-top:1px solid var(--border)}
+.om-item h4{margin:0 0 8px;font-size:16.5px;font-weight:700;color:var(--gold-2);direction:ltr;unicode-bidi:isolate;text-align:right}
+.om-item p{font-size:14.5px;line-height:1.95}
+.om-item p+p{margin-top:10px}
+.om-item p.om-proj{color:var(--ink);font-weight:700}
+.om-feats{list-style:none;margin:12px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:8px 18px}
+.om-feats li{position:relative;padding-inline-start:18px;font-size:14px;font-weight:500;color:var(--ink);direction:ltr;unicode-bidi:isolate;text-align:left}
+.om-feats li::before{content:"";position:absolute;inset-inline-start:0;top:.7em;width:7px;height:7px;border-radius:50%;background:var(--gold)}
+body.om-lock{overflow:hidden}
+@media(max-width:640px){.om-overlay{padding:14px}.om-head,.om-body{padding-inline:20px}.om-feats{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.om-overlay,.om-panel{transition:none}}
 </style>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23070D1B'/><g transform='translate(9 10) scale(.98)'><polygon points='1,17 55,17 39.5,32.6 39.5,82 26,82 26,32.6 1,32.6' fill='%23fff'/><polygon points='47,0.9 82.75,0.9 82.75,34.9 73.1,34.9 73.1,17.1 52.9,37.1 52.9,81.9 42.25,81.9 42.25,34.6 66.25,10.4 47,10.4' fill='%23DC9E1F'/></g></svg>">
 
@@ -345,7 +434,6 @@ footer{padding:60px 0 30px;border-top:1px solid var(--border)}
 </script>
 
 <script defer src="/_vercel/insights/script.js"></script>
-
 </head>
 <body>
 <div class="scrollbar" id="scrollbar"></div>
@@ -366,7 +454,7 @@ footer{padding:60px 0 30px;border-top:1px solid var(--border)}
       <li><a href="#faq">FAQ</a></li>
     </ul>
     <div class="nav-actions">
-      <a href="https://forms.gle/2Ui9fqWfUR8MWw2a8" target="_blank" rel="noopener" class="btn btn-primary" style="padding:10px 22px;font-size:13.5px">Apply for Round 2</a>
+      <a href="https://forms.gle/2Ui9fqWfUR8MWw2a8" target="_blank" rel="noopener" class="btn btn-primary nav-cta">Apply for Round 2</a>
       <button class="burger" id="burger"><span></span><span></span><span></span></button>
     </div>
   </nav>
@@ -382,21 +470,7 @@ footer{padding:60px 0 30px;border-top:1px solid var(--border)}
     <div class="reveal in">
       <svg class="eyebrow-logo" viewBox="0 0 84 83" role="img" aria-label="Tawjeh" ><polygon points="1,17 55,17 39.5,32.6 39.5,82 26,82 26,32.6 1,32.6" fill="#fff" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/><polygon points="47,0.9 82.75,0.9 82.75,34.9 73.1,34.9 73.1,17.1 52.9,37.1 52.9,81.9 42.25,81.9 42.25,34.6 66.25,10.4 47,10.4" fill="#DC9E1F" stroke="#DC9E1F" stroke-width="1.5" stroke-linejoin="round"/></svg>
       <h1><span class="grad">Tawjeh</span> Developer Journey</h1>
-      <div class="flow-chips">
-        <span class="chip">Learn</span><span class="chip-arrow">←</span>
-        <span class="chip">Practice</span><span class="chip-arrow">←</span>
-        <span class="chip">Build</span><span class="chip-arrow">←</span>
-        <span class="chip">Get Feedback</span><span class="chip-arrow">←</span>
-        <span class="chip">Track Progress</span><span class="chip-arrow">←</span>
-        <span class="chip">Earn Points</span><span class="chip-arrow">←</span>
-        <span class="chip gold">Level Up</span>
-      </div>
-      <div class="flow-chips">
-        <span class="chip gold">Level 0</span><span class="chip-arrow">←</span>
-        <span class="chip gold">Level 1</span><span class="chip-arrow">←</span>
-        <span class="chip gold">Level 2</span><span class="chip-arrow">←</span>
-        <span class="chip gold">Level 3</span>
-      </div>
+      <div class="journey"><div class="jr-row"><span class="chip">Learn</span><span class="chip-arrow">←</span><span class="chip">Practice</span><span class="chip-arrow">←</span><span class="chip">Build</span></div><div class="jr-down"><span>↓</span></div><div class="jr-row ltr"><span class="chip">Get Feedback</span><span class="chip-arrow">←</span><span class="chip">Track Progress</span><span class="chip-arrow">←</span><span class="chip">Earn Points</span></div><div class="jr-down ltr"><span>↓</span></div><div class="jr-levels"><div class="jr-up">Level Up</div><div class="jr-row four"><span class="chip gold">Level 0</span><span class="chip-arrow">←</span><span class="chip gold">Level 1</span><span class="chip-arrow">←</span><span class="chip gold">Level 2</span><span class="chip-arrow">←</span><span class="chip gold">Level 3</span></div></div></div>
       <div class="hero-cta">
         <a href="https://forms.gle/2Ui9fqWfUR8MWw2a8" target="_blank" rel="noopener" class="btn btn-primary">Apply for Round 2</a>
         <a href="#about" class="btn btn-ghost">Explore Tawjeh</a>
@@ -449,15 +523,7 @@ footer{padding:60px 0 30px;border-top:1px solid var(--border)}
 <section id="problems">
   <div class="wrap">
     <div class="section-head reveal"><div class="eyebrow">Problems</div><h2>المشاكل اللي Tawjeh بتساعدك تتغلب عليها</h2></div>
-    <div class="prob-grid">
-      <div class="prob glass reveal">غياب الإرشاد خلال رحلة التعلم</div>
-      <div class="prob glass reveal">التركيز على الفهم النظري وإهمال التطبيق العملي خلال الرحلة</div>
-      <div class="prob glass reveal">التوهان وعدم وضوح الخطوة التالية</div>
-      <div class="prob glass reveal">التشتت بين المصادر المختلفة وصعوبة اختيار المصادر المناسبة</div>
-      <div class="prob glass reveal">عدم وجود Feedback تفصيلي ومستمر على شغلك</div>
-      <div class="prob glass reveal">مذاكرة Topics كتير من غير معرفة إزاي تطبقها بشكل عملي</div>
-      <div class="prob glass reveal">البدء في Project كبير من غير تقسيم واضح للخطوات والFeatures المطلوبة</div>
-    </div>
+    <div class="prob-slider reveal" id="probSlider" aria-roledescription="carousel"><button type="button" class="prob-nav" id="probPrev" aria-label="السابق">&rarr;</button><div class="prob-stage" aria-live="polite"><div class="prob glass active">غياب الإرشاد خلال رحلة التعلم</div><div class="prob glass">التركيز على الفهم النظري وإهمال التطبيق العملي خلال الرحلة</div><div class="prob glass">التوهان وعدم وضوح الخطوة التالية</div><div class="prob glass">التشتت بين المصادر المختلفة وصعوبة اختيار المصادر المناسبة</div><div class="prob glass">عدم وجود Feedback تفصيلي ومستمر على شغلك</div><div class="prob glass">مذاكرة Topics كتير من غير معرفة إزاي تطبقها بشكل عملي</div><div class="prob glass">البدء في Project كبير من غير تقسيم واضح للخطوات والFeatures المطلوبة</div></div><button type="button" class="prob-nav" id="probNext" aria-label="التالي">&larr;</button></div><div class="prob-dots" id="probDots"><button type="button" aria-label="مشكلة 1"></button><button type="button" aria-label="مشكلة 2"></button><button type="button" aria-label="مشكلة 3"></button><button type="button" aria-label="مشكلة 4"></button><button type="button" aria-label="مشكلة 5"></button><button type="button" aria-label="مشكلة 6"></button><button type="button" aria-label="مشكلة 7"></button></div>
   </div>
 </section>
 <section>
@@ -537,26 +603,15 @@ footer{padding:60px 0 30px;border-top:1px solid var(--border)}
 </section>
 <section id="levels">
   <div class="wrap">
-    <div class="section-head reveal"><div class="eyebrow">Levels</div><h2>Levels</h2></div>
-    <div class="levels seq">
-      <div class="level-card glass reveal"><div class="lv">00</div><h3>Fundamentals</h3></div>
-      <div class="level-card glass reveal"><div class="lv">01</div><h3>.NET Foundations</h3></div>
-      <div class="level-card glass reveal"><div class="lv">02</div><h3>Real-World Projects</h3></div>
-      <div class="level-card glass reveal"><div class="lv">03</div><h3>Open Source &amp; Advanced GitHub</h3><svg class="lv-arrow" viewBox="0 0 84 83" aria-hidden="true"><polygon points="47,0.9 82.75,0.9 82.75,34.9 73.1,34.9 73.1,17.1 52.9,37.1 42.25,34.6 66.25,10.4 47,10.4" fill="#DC9E1F" stroke="#DC9E1F" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
-    </div>
-  </div>
-</section>
-<section id="outcomes">
-  <div class="wrap">
-    <div class="section-head reveal"><div class="eyebrow">Outcomes</div><h2>هتطلع بإيه من كل Level؟</h2></div>
+    <div class="section-head reveal"><div class="eyebrow">Levels and Outcomes</div><h2>هتطلع بإيه من كل Level؟</h2></div>
     <div class="levels outcomes">
-      <div class="level-card glass reveal"><div class="lv">00</div><h3>Fundamentals</h3><p>هتبني أساس قوي في C#, OOP وDatabases، وتفهم الـ Core concepts اللي محتاجها عشان تبدأ تبني Applications.</p></div>
-      <div class="level-card glass reveal"><div class="lv">01</div><h3>.NET Foundations</h3><p>هتحوّل أساسياتك إلى Real .NET Applications من خلال LINQ, EF Core وASP.NET Core Web APIs مع Hands-on Projects.</p></div>
-      <div class="level-card glass reveal"><div class="lv">02</div><h3>Real-World Projects</h3><p>هتبني Real-World .NET Projects وتتعلم Modern Architecture, Security, Integrations وProduction Practices، عشان تكون أقرب للـ Job-Ready.</p></div>
-      <div class="level-card glass reveal featured"><div class="lv">03</div><h3>Open Source &amp; Advanced GitHub</h3><p><b class="hl">هتشارك في Open Source Projects وهتشتغل مع تيم</b>، وتشتغل بطريقة الـ Professional Developer من خلال Git &amp; GitHub, Clean Code, Unit Testing, APIs وProblem Solving.</p></div>
+      <div class="level-card glass reveal"><div class="lv">00</div><h3>Fundamentals</h3><p>هتبني أساس قوي في C#, OOP وDatabases، وتفهم الـ Core concepts اللي محتاجها عشان تبدأ تبني Applications.<button type="button" class="lv-cta" data-modal="0" data-lv="00" data-title="Fundamentals" aria-haspopup="dialog">باقي التفاصيل <span aria-hidden="true">←</span></button></div>
+      <div class="level-card glass reveal"><div class="lv">01</div><h3>.NET Foundations</h3><p>هتحوّل أساسياتك إلى Real .NET Applications من خلال LINQ, EF Core وASP.NET Core Web APIs مع Hands-on Projects.<button type="button" class="lv-cta" data-modal="1" data-lv="01" data-title=".NET Foundations" aria-haspopup="dialog">باقي التفاصيل <span aria-hidden="true">←</span></button></div>
+      <div class="level-card glass reveal"><div class="lv">02</div><h3>Real-World Projects</h3><p>هتبني Real-World .NET Projects وتتعلم Modern Architecture, Security, Integrations وProduction Practices، عشان تكون أقرب للـ Job-Ready.<button type="button" class="lv-cta" data-modal="2" data-lv="02" data-title="Real-World Projects" aria-haspopup="dialog">باقي التفاصيل <span aria-hidden="true">←</span></button></div>
+      <div class="level-card glass reveal featured"><div class="lv">03</div><h3>Open Source &amp; Advanced GitHub</h3><p><b class="hl">هتشارك في Open Source Projects وهتشتغل مع تيم</b>، وتشتغل بطريقة الـ Professional Developer من خلال Git &amp; GitHub, Clean Code, Unit Testing, APIs وProblem Solving.<button type="button" class="lv-cta" data-modal="3" data-lv="03" data-title="Open Source &amp; Advanced GitHub" aria-haspopup="dialog">باقي التفاصيل <span aria-hidden="true">←</span></button></div>
     </div>
   </div>
-</section>
+<template id="om-tpl-0"><div class="om-item"><h4>1. C# Basics</h4><p>هتتعلم أساسيات اللغة من الصفر: المتغيرات وأنواع البيانات، الشروط، اللوبات، الـ Arrays، الـ Methods، وإزاي تفكر وتحل المشاكل بالكود. وهتحل عليها تدريبات كتير لحد ما الأساسيات تبقى في إيدك.</p></div><div class="om-item"><h4>2. OOP (البرمجة كائنية التوجه)</h4><p>هتفهم الـ Classes والـ Objects، والـ Encapsulation والـ Inheritance والـ Polymorphism والـ Abstraction، وإزاي تقسم البرنامج لكائنات منظمة وسهل تتعدل. وبرضه هتحل تدريبات كتير عشان الفكرة تثبت.</p></div><div class="om-item"><h4>3. قواعد البيانات (Database)</h4><p>هتتعلم إزاي الداتا بتتخزن وتتنظم، وتكتب Queries وتتعامل مع الجداول والعلاقات بينها، وهتحل مسائل كتير على كل ده لحد ما تبقى مرتاح في التعامل مع الداتا.</p></div></template><template id="om-tpl-1"><div class="om-item"><h4>1. Advanced C# + Exception Handling</h4><p>هتتقن أساسيات اللغة المتقدمة: Collections، Generics، Delegates، Events، Lambda، Async/Await، التعامل مع الملفات، وكل أنواع الـ Exception Handling.</p><p class="om-proj">المشروع: Job Application Tracker (Console)</p></div><div class="om-item"><h4>2. LINQ</h4><p>هتعرف تتعامل مع الداتا بشكل احترافي: Filtering، Projection، Grouping، Joining، Aggregation، Set Operations، وتفرق بين Deferred و Immediate Execution وبين IEnumerable و IQueryable.</p><p class="om-proj">المشروع: Sales Data Analytics Dashboard (Console)</p></div><div class="om-item"><h4>3. Entity Framework Core</h4><p>هتتعلم تتعامل مع قواعد البيانات: Code First + Migrations، العلاقات بين الجداول، Fluent API، Seeding، CRUD، Repository Pattern، Eager Loading، والـ Transactions.</p><p class="om-proj">المشروع: Library Management System (EF Core)</p></div><div class="om-item"><h4>4. ASP.NET Core Web API</h4><p>هتبني API كامل بمعمارية Clean Architecture: HTTP والـ Routing والـ Middleware، Repository + Unit of Work + Specification Pattern، DTOs + AutoMapper، Validation والـ Logging (Serilog)، Redis Caching، JWT Authentication والـ Authorization، وأخيراً نظام الـ Orders.</p><p class="om-proj">المشروع: E-Commerce API — Clean Architecture</p></div></template><template id="om-tpl-2"><div class="om-item om-intro"><h4>Project</h4><p>هنبني Project واحد كبير بيتطور معانا تدريجيًا خلال الـLevel اسمه TeamFlow — Project &amp; Team Operations Platform.</p><p>الـProject هيكون في حدود 40–50 API Endpoints في النهاية، ومش هيكون مجرد CRUD Application، لكن هيتطور تدريجيًا من Basic Backend إلى Production-Ready Application من خلال مجموعة متكاملة من الـFeatures والتحديات العملية.</p><p>الـProject هيشمل Features زي</p><ul class="om-feats"><li>Organizations &amp; Teams Management</li><li>Project Management</li><li>Project Membership &amp; Permissions</li><li>Authentication &amp; Authorization</li><li>Task Management &amp; Assignment</li><li>Task Completion &amp; Business Rules</li><li>Pagination, Filtering, Sorting &amp; Searching</li><li>Consistent API Error Handling</li><li>Background Notifications</li><li>Redis Caching</li><li>AI-Powered Project Assistant</li><li>Payment Integration</li><li>Webhooks &amp; Webhook Security</li><li>Unit Testing</li><li>Integration Testing</li><li>Docker</li><li>GitHub Actions &amp; CI/CD</li><li>Deployment</li></ul></div><div class="om-item"><h4>Architecture &amp; Design</h4><p>هتتعلم إزاي تصمم الـDomain Model وتحدد الـEntities والـBusiness Rules، وتطبق Clean Architecture وSOLID ومبدأ Dependency Inversion، مع فهم مسؤوليات كل Layer والـRepository Abstraction والـArchitectural Trade-offs.</p></div><div class="om-item"><h4>Application Architecture</h4><p>هتتعلم بناء الـApplication Architecture باستخدام Use-Case Oriented Architecture وCQRS، مع تطبيق Commands &amp; Queries وMediatR وPipeline Behaviors، بالإضافة إلى استخدام DTOs وResult Pattern وFluentValidation.</p></div><div class="om-item"><h4>ASP.NET Core</h4><p>هتطبق أسس بناء الـAPIs باستخدام ASP.NET Core، بداية من Dependency Injection والـMiddleware والـError Handling وProblemDetails، وصولًا إلى Authentication &amp; Authorization باستخدام JWT وRefresh Tokens، مع التعامل مع CancellationToken والـAsync Programming.</p></div><div class="om-item"><h4>Database &amp; EF Core</h4><p>هتتعلم التعامل مع EF Core بشكل أكثر احترافية، من خلال بناء الـRepository Implementation وفهم Query Composition وتطبيق Pagination وFiltering وSorting وSearching على البيانات.</p></div><div class="om-item"><h4>Backend Engineering</h4><p>هتتعلم إزاي تطبق الـBusiness Rules داخل الـApplication بشكل صحيح، وتتعامل مع Background Processing باستخدام Hosted Services وBackgroundService، بالإضافة إلى Cancellation وGraceful Shutdown وStructured Logging.</p><p>هتطبق Redis باستخدام Cache-Aside Pattern، وتتعلم التعامل مع Cache Invalidation، بالإضافة إلى فهم Idempotency وكيفية التعامل مع Failures في الـExternal Services.</p></div><div class="om-item"><h4>Testing</h4><p>هتتعلم كتابة Unit Tests باستخدام xUnit لاختبار الـBusiness Rules والـApplication Use Cases، بالإضافة إلى تطبيق Integration Testing واختبار الـAPIs على مستوى الـHTTP.</p></div><div class="om-item"><h4>External Integrations</h4><p>هتتعامل مع Integrations حقيقية تشمل AI APIs مع بناء Abstraction للـAI Provider والتعامل مع Authorization وحماية البيانات.</p><p>كمان هتطبق Payment Gateway Integration وتفهم الـPayment Lifecycle والتعامل مع Payment Webhooks، بما في ذلك Webhook Signature Verification وWebhook Idempotency.</p></div><div class="om-item"><h4>Deployment &amp; DevOps Basics</h4><p>هتتعلم أساسيات تجهيز الـApplication للـDeployment باستخدام Docker وDockerfile وDocker Compose، مع التعامل مع Environment-Based Configuration وSecrets Management.</p><p>وهتطبق GitHub Actions لبناء Automated Build &amp; Tests وإنشاء Docker Images، بالإضافة إلى فهم أساسيات CI/CD وتنفيذ Deployment للـApplication.</p></div></template><template id="om-tpl-3"><div class="om-item"><h4>المشاركة في الـOpen Source</h4><p>هتتعرف على مفهوم الـOpen Source، وإزاي تختار Tasks مناسبة لمستواك، وتساهم في مشاريع حقيقية من خلال كتابة كود يتم استخدامه فعليًا.</p></div><div class="om-item"><h4>إتقان Git &amp; GitHub</h4><p>هتطبق Workflow قريب من بيئة الشغل الفعلية، من خلال التعامل مع Branches وPull Requests وCode Reviews، بالإضافة إلى إنشاء الـIssues ومتابعتها.</p></div><div class="om-item"><h4>كتابة Clean &amp; Production-Ready Code</h4><p>هتتعلم أفضل الممارسات لكتابة كود منظم وقابل للصيانة، مع تطبيق الـFormatting والـValidation واتباع مبادئ تساعدك على كتابة Production-Ready Code.</p></div><div class="om-item"><h4>Unit Testing</h4><p>هتتعلم كتابة Unit Tests باستخدام xUnit، والتأكد من صحة الـBusiness Logic وتقليل احتمالية ظهور Bugs أو التأثير على أجزاء موجودة بالفعل في المشروع.</p></div><div class="om-item"><h4>API Fundamentals &amp; Resilience</h4><p>هتراجع أساسيات تصميم واستهلاك الـAPIs، والتعامل مع البيانات باستخدام DTOs، بالإضافة إلى فهم الـError Handling والـLogging وكتابة APIs أكثر استقرارًا وقابلية للاعتماد عليها.</p></div><div class="om-item"><h4>Problem Solving</h4><p>هتطور مهارات التفكير البرمجي وحل المشكلات من خلال حل 18 مسألة برمجية، بمعدل 3 مسائل في كل Sprint، مع الاستمرار في تطوير قدرتك على تحليل المشكلة والوصول لحل مناسب.</p></div></template></section>
 <section id="career">
   <div class="wrap">
     <div class="section-head reveal" style="margin-bottom:36px">
@@ -890,5 +945,44 @@ function updateCountdown(){
   document.getElementById('cd-s').textContent = String(Math.floor(diff%60000/1000)).padStart(2,'0');
 }
 updateCountdown(); setInterval(updateCountdown,1000);
+</script>
+
+<div class="om-overlay" id="omOverlay" aria-hidden="true"><div class="om-panel" role="dialog" aria-modal="true" aria-labelledby="omTitle"><div class="om-head"><div class="lv" id="omLv"></div><h3 id="omTitle"></h3><button type="button" class="om-close" id="omClose" aria-label="إغلاق">&times;</button></div><div class="om-body" id="omBody"></div></div></div>
+<script>
+(function(){
+  var ov=document.getElementById('omOverlay'),body=document.getElementById('omBody'),last=null;
+  function open(btn){
+    var t=document.getElementById('om-tpl-'+btn.dataset.modal);if(!t)return;
+    last=btn;body.innerHTML='';body.appendChild(t.content.cloneNode(true));body.scrollTop=0;
+    document.getElementById('omLv').textContent=btn.dataset.lv;
+    document.getElementById('omTitle').innerHTML=btn.dataset.title;
+    ov.classList.add('open');ov.setAttribute('aria-hidden','false');document.body.classList.add('om-lock');
+    document.getElementById('omClose').focus();
+  }
+  function close(){ov.classList.remove('open');ov.setAttribute('aria-hidden','true');document.body.classList.remove('om-lock');if(last)last.focus();}
+  document.querySelectorAll('.lv-cta').forEach(function(b){b.addEventListener('click',function(){open(b)})});
+  document.getElementById('omClose').addEventListener('click',close);
+  ov.addEventListener('mousedown',function(e){if(e.target===ov)close()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&ov.classList.contains('open'))close()});
+})();
+</script>
+
+<script>
+(function(){
+  var sl=document.getElementById('probSlider');if(!sl)return;
+  var cards=sl.querySelectorAll('.prob'),dots=document.querySelectorAll('#probDots button'),n=cards.length,cur=0,timer=null,pausedUntil=0,hover=false,visible=false;
+  function go(i){cards[cur].classList.remove('active');dots[cur].classList.remove('on');cur=(i+n)%n;cards[cur].classList.add('active');dots[cur].classList.add('on');}
+  dots[0].classList.add('on');
+  function user(i){go(i);pausedUntil=Date.now()+5000;}
+  document.getElementById('probPrev').addEventListener('click',function(){user(cur-1)});
+  document.getElementById('probNext').addEventListener('click',function(){user(cur+1)});
+  dots.forEach(function(d,i){d.addEventListener('click',function(){user(i)})});
+  sl.addEventListener('mouseenter',function(){hover=true});sl.addEventListener('mouseleave',function(){hover=false});
+  var x0=null;
+  sl.addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});
+  sl.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;x0=null;if(Math.abs(dx)>40)user(dx>0?cur-1:cur+1)});
+  setInterval(function(){if(visible&&!hover&&Date.now()>pausedUntil)go(cur+1)},2000);
+  if('IntersectionObserver' in window){new IntersectionObserver(function(en){visible=en[0].isIntersecting},{threshold:.3}).observe(sl)}else{visible=true}
+})();
 </script>
 </body></html>
